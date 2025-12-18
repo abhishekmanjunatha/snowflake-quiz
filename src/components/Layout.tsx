@@ -23,6 +23,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <footer className="bg-slate-800 text-slate-400 py-6 mt-auto">
         <div className="container mx-auto px-4 text-center text-sm">
           <p>Unofficial Practice App for SnowPro Core Certification</p>
+          <p className="mt-2">Created by <a href="https://github.com/abhishekmanjunatha" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Abhishek Manjunath</a></p>
         </div>
       </footer>
     </div>
