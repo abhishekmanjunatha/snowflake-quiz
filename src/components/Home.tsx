@@ -39,6 +39,14 @@ export const Home: React.FC = () => {
           </p>
         </button>
       </div>
+
+      <div className="text-center pt-8 border-t border-slate-200">
+        <p className="text-slate-500 text-sm">
+          SnowPro Core Certification Prep &copy; {new Date().getFullYear()}
+          <br />
+          Created by <a href="https://github.com/AbhishekManjunath" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">Abhishek Manjunath</a>
+        </p>
+      </div>
     </div>
   );
 };
