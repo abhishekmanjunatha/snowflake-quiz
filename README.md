@@ -49,7 +49,7 @@ An interactive, lightweight web application designed to help you prepare for the
 
 ## 📝 Data Management
 
-The quiz content is stored in `resource/SnowPro Core (COF-C02) Practice & Scenarios.md`.
+The quiz content is stored in `resources/snowpro-questions.md`.
 To update questions or add new domains:
 1.  Edit the Markdown file.
 2.  Run `npm run parse-data` to update `src/data/quiz-data.json`.
