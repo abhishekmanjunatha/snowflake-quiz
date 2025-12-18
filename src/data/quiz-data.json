@@ -1,0 +1,5233 @@
+{
+  "title": "SnowPro Core (COF-C02) Practice & Scenarios",
+  "domains": [
+    {
+      "id": "1.0",
+      "title": "Snowflake AI Data Cloud Features and Architecture",
+      "weightage": "24%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "1.1",
+          "title": "Key Features of Snowflake",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to ensure that their Finance team's month-end reporting does not slow down the Data Science team's model training. Which Snowflake feature directly enables this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Multi-factor Authentication"
+                },
+                {
+                  "label": "B",
+                  "text": "Separation of Storage and Compute"
+                },
+                {
+                  "label": "C",
+                  "text": "Data Clustering"
+                },
+                {
+                  "label": "D",
+                  "text": "Time Travel"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "By separating storage and compute, GRI can assign different Virtual Warehouses to each team, ensuring zero resource contention."
+            },
+            {
+              "id": 2,
+              "text": "GRI is looking for a \"zero-management\" platform. Which task is GRI responsible for in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Managing physical hardware and servers"
+                },
+                {
+                  "label": "B",
+                  "text": "Installing software updates and security patches"
+                },
+                {
+                  "label": "C",
+                  "text": "Managing data and access control"
+                },
+                {
+                  "label": "D",
+                  "text": "Optimizing the underlying Operating System"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Snowflake is a SaaS platform; Snowflake manages infrastructure. The user is only responsible for the data and access logic."
+            },
+            {
+              "id": 3,
+              "text": "Which layer of the Snowflake architecture is responsible for query parsing and optimization?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Storage Layer"
+                },
+                {
+                  "label": "B",
+                  "text": "Compute Layer"
+                },
+                {
+                  "label": "C",
+                  "text": "Cloud Services Layer"
+                },
+                {
+                  "label": "D",
+                  "text": "Virtual Warehouse Layer"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "The Cloud Services layer is the \"brain\" and handles query optimization, security, and metadata."
+            },
+            {
+              "id": 4,
+              "text": "GRI needs to ensure that their EU data remains strictly in the EU region but needs a global view for the US HQ. Which feature supports this global architecture?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowgrid"
+                },
+                {
+                  "label": "C",
+                  "text": "Snowpark"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpipe"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowgrid enables cross-region replication and global data governance."
+            },
+            {
+              "id": 5,
+              "text": "A query is run: SELECT COUNT(\\*) FROM transactions. If the warehouse is suspended, how does Snowflake return the result?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It fails because the warehouse is off."
+                },
+                {
+                  "label": "B",
+                  "text": "It auto-resumes the warehouse, scans the data, and shuts down."
+                },
+                {
+                  "label": "C",
+                  "text": "It fetches the result from the Cloud Services metadata cache without a warehouse."
+                },
+                {
+                  "label": "D",
+                  "text": "It fetches the result from the local SSD cache of the last used warehouse."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Metadata like row counts are stored in Cloud Services. No compute is required."
+            },
+            {
+              "id": 6,
+              "text": "GRI requires a dedicated, completely isolated Snowflake instance for their most sensitive financial data. Which edition should they choose?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Standard"
+                },
+                {
+                  "label": "B",
+                  "text": "Enterprise"
+                },
+                {
+                  "label": "C",
+                  "text": "Business Critical"
+                },
+                {
+                  "label": "D",
+                  "text": "Virtual Private Snowflake (VPS)"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "VPS provides a fully isolated environment for high-security requirements."
+            },
+            {
+              "id": 7,
+              "text": "What is the minimum billing increment for a Virtual Warehouse after the first 60 seconds?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "1 minute"
+                },
+                {
+                  "label": "B",
+                  "text": "1 second"
+                },
+                {
+                  "label": "C",
+                  "text": "5 minutes"
+                },
+                {
+                  "label": "D",
+                  "text": "1 hour"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "After a 1-minute minimum, billing is per-second."
+            },
+            {
+              "id": 8,
+              "text": "Which architectural layer is responsible for maintaining ACID compliance?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Storage Layer"
+                },
+                {
+                  "label": "B",
+                  "text": "Compute Layer"
+                },
+                {
+                  "label": "C",
+                  "text": "Cloud Services Layer"
+                },
+                {
+                  "label": "D",
+                  "text": "Network Layer"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Cloud Services handles transaction management and ACID compliance."
+            },
+            {
+              "id": 9,
+              "text": "GRI scales their Small warehouse to a Medium. This is an example of:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Scaling Out"
+                },
+                {
+                  "label": "B",
+                  "text": "Scaling Down"
+                },
+                {
+                  "label": "C",
+                  "text": "Scaling Up"
+                },
+                {
+                  "label": "D",
+                  "text": "Auto-scaling"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Scaling \"Up\" refers to increasing the size of a single warehouse to handle more complex queries."
+            },
+            {
+              "id": 10,
+              "text": "A warehouse is set to \"Auto-suspend: 5 minutes\". It finishes a query at 12:00:00. At 12:02:00, it receives a new query. How much billing occurs for the idle time?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "0 seconds"
+                },
+                {
+                  "label": "B",
+                  "text": "2 minutes"
+                },
+                {
+                  "label": "C",
+                  "text": "5 minutes"
+                },
+                {
+                  "label": "D",
+                  "text": "60 seconds"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The warehouse was active/running for those 2 minutes waiting for the next query."
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "title": "Snowflake Tools and User Interfaces",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to automate their data loading using a bash script on a Linux server. Which tool should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "B",
+                  "text": "SnowSQL"
+                },
+                {
+                  "label": "C",
+                  "text": "Snowflake SQL API"
+                },
+                {
+                  "label": "D",
+                  "text": "Streamlit"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "SnowSQL is the CLI tool designed for scripting and automation."
+            },
+            {
+              "id": 2,
+              "text": "A developer at GRI wants to build a data visualization app using Python directly inside the Snowflake UI. What should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowpark"
+                },
+                {
+                  "label": "B",
+                  "text": "Cortex"
+                },
+                {
+                  "label": "C",
+                  "text": "Streamlit in Snowflake"
+                },
+                {
+                  "label": "D",
+                  "text": "SnowCD"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Streamlit allows building interactive apps within the Snowflake environment."
+            },
+            {
+              "id": 3,
+              "text": "Which Snowflake tool is specifically used to diagnose if a corporate firewall is blocking access to Snowflake endpoints?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "B",
+                  "text": "SnowSQL"
+                },
+                {
+                  "label": "C",
+                  "text": "SnowCD"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpark"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "SnowCD (Connectivity Diagnostic) tests network paths."
+            },
+            {
+              "id": 4,
+              "text": "GRI uses Tableau for business intelligence. How does Tableau connect to Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Native SQL API"
+                },
+                {
+                  "label": "B",
+                  "text": "ODBC/JDBC Driver"
+                },
+                {
+                  "label": "C",
+                  "text": "SnowSQL"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpipe"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "External BI tools use standard drivers like ODBC or JDBC."
+            },
+            {
+              "id": 5,
+              "text": "Which tool allows a data scientist to write Scala code that executes natively on Snowflake compute?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowpark"
+                },
+                {
+                  "label": "C",
+                  "text": "SnowSQL"
+                },
+                {
+                  "label": "D",
+                  "text": "Cortex"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowpark enables Python, Java, and Scala logic within Snowflake."
+            },
+            {
+              "id": 6,
+              "text": "What is the primary interface for managing Snowflake's account-level billing and usage charts?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SnowSQL"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "C",
+                  "text": "Classic UI"
+                },
+                {
+                  "label": "D",
+                  "text": "SQL API"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowsight is the primary web-based management interface."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to summarize 1,000 customer reviews using an AI model built into Snowflake. Which feature should they call?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowpark"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowsight"
+                },
+                {
+                  "label": "C",
+                  "text": "Cortex"
+                },
+                {
+                  "label": "D",
+                  "text": "SnowCD"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Cortex provides managed AI functions like SUMMARIZE."
+            },
+            {
+              "id": 8,
+              "text": "Which of the following is NOT a Snowflake-provided connector?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Kafka Connector"
+                },
+                {
+                  "label": "B",
+                  "text": "Spark Connector"
+                },
+                {
+                  "label": "C",
+                  "text": "Python Connector"
+                },
+                {
+                  "label": "D",
+                  "text": "Oracle Database Connector"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "Snowflake provides connectors to ingest *into* Snowflake, not for external database management."
+            },
+            {
+              "id": 9,
+              "text": "Can the Snowflake SQL API be used to submit DDL commands like CREATE TABLE?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is for SELECT only."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it can execute any SQL statement."
+                },
+                {
+                  "label": "C",
+                  "text": "No, it is for PUT and GET only."
+                },
+                {
+                  "label": "D",
+                  "text": "Yes, but only in the Enterprise edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The SQL API can execute any valid Snowflake SQL."
+            },
+            {
+              "id": 10,
+              "text": "In Snowsight, what is the purpose of the \"Query Profile\"?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "To see user login history."
+                },
+                {
+                  "label": "B",
+                  "text": "To analyze the performance and execution plan of a specific SQL query."
+                },
+                {
+                  "label": "C",
+                  "text": "To set up MFA for a user."
+                },
+                {
+                  "label": "D",
+                  "text": "To browse the data marketplace."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "It provides a visual representation of how a query was processed."
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "title": "Snowflake Catalog and Objects",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI has a clickstream dataset in JSON format. In which column type should they store this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "VARCHAR"
+                },
+                {
+                  "label": "B",
+                  "text": "BLOB"
+                },
+                {
+                  "label": "C",
+                  "text": "VARIANT"
+                },
+                {
+                  "label": "D",
+                  "text": "ARRAY"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "VARIANT is the native data type for semi-structured data like JSON."
+            },
+            {
+              "id": 2,
+              "text": "GRI creates a staging table for their daily ETL process that they don't need to recover if a disaster occurs, but it must persist across different sessions. What table type should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Permanent"
+                },
+                {
+                  "label": "B",
+                  "text": "Temporary"
+                },
+                {
+                  "label": "C",
+                  "text": "Transient"
+                },
+                {
+                  "label": "D",
+                  "text": "External"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Transient tables persist but have no Fail-safe, saving storage costs for non-critical data."
+            },
+            {
+              "id": 3,
+              "text": "A user drops a table by mistake. Which command should they use to restore it instantly?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "RESTORE TABLE"
+                },
+                {
+                  "label": "B",
+                  "text": "UNDROP TABLE"
+                },
+                {
+                  "label": "C",
+                  "text": "RECOVER TABLE"
+                },
+                {
+                  "label": "D",
+                  "text": "FLASHBACK TABLE"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "UNDROP uses Time Travel to restore dropped objects."
+            },
+            {
+              "id": 4,
+              "text": "Which object type allows GRI to share data with a partner without the partner seeing the underlying table names or JOIN logic?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Standard View"
+                },
+                {
+                  "label": "B",
+                  "text": "Secure View"
+                },
+                {
+                  "label": "C",
+                  "text": "Materialized View"
+                },
+                {
+                  "label": "D",
+                  "text": "Stream"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Secure Views hide the DDL and logic from unauthorized users."
+            },
+            {
+              "id": 5,
+              "text": "Which object is used to schedule the execution of a Stored Procedure every Monday at 8 AM?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stream"
+                },
+                {
+                  "label": "B",
+                  "text": "Pipe"
+                },
+                {
+                  "label": "C",
+                  "text": "Task"
+                },
+                {
+                  "label": "D",
+                  "text": "Sequence"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Tasks are used for scheduling SQL and procedures."
+            },
+            {
+              "id": 6,
+              "text": "A \"Managed Access Schema\" is different from a \"Standard Schema\" because:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It is only available in Business Critical edition."
+                },
+                {
+                  "label": "B",
+                  "text": "The object owner cannot grant privileges; only the schema owner can."
+                },
+                {
+                  "label": "C",
+                  "text": "It automatically encrypts data."
+                },
+                {
+                  "label": "D",
+                  "text": "It does not allow the creation of views."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Managed schemas centralize grant management to the schema owner."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to track exactly which rows in a table have changed since the last time their ETL process ran. Which object should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Task"
+                },
+                {
+                  "label": "B",
+                  "text": "Pipe"
+                },
+                {
+                  "label": "C",
+                  "text": "Stream"
+                },
+                {
+                  "label": "D",
+                  "text": "View"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Streams track DML changes (inserts, updates, deletes) on a table."
+            },
+            {
+              "id": 8,
+              "text": "What is the maximum size of a single VARIANT column value?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "1 MB"
+                },
+                {
+                  "label": "B",
+                  "text": "8 MB"
+                },
+                {
+                  "label": "C",
+                  "text": "16 MB"
+                },
+                {
+                  "label": "D",
+                  "text": "50 MB"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "VARIANT columns are capped at 16 MB."
+            },
+            {
+              "id": 9,
+              "text": "Which object is used to connect an External Stage to a target table for continuous, automated data loading?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stream"
+                },
+                {
+                  "label": "B",
+                  "text": "Task"
+                },
+                {
+                  "label": "C",
+                  "text": "Pipe"
+                },
+                {
+                  "label": "D",
+                  "text": "Sequence"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "A Pipe (Snowpipe) automates the COPY INTO command."
+            },
+            {
+              "id": 10,
+              "text": "GRI wants to provide a unique ID to every row in a table automatically. Which object should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stream"
+                },
+                {
+                  "label": "B",
+                  "text": "Task"
+                },
+                {
+                  "label": "C",
+                  "text": "Sequence"
+                },
+                {
+                  "label": "D",
+                  "text": "View"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Sequences generate unique numerical values."
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "title": "Snowflake Storage Concepts",
+          "questions": [
+            {
+              "id": 1,
+              "text": "How are micro-partitions created in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Manually by the user using the PARTITION BY clause."
+                },
+                {
+                  "label": "B",
+                  "text": "Automatically by Snowflake during the data load process."
+                },
+                {
+                  "label": "C",
+                  "text": "By setting a \"Partitioning Key\" on the table."
+                },
+                {
+                  "label": "D",
+                  "text": "Only when using the Enterprise edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake automatically and transparently micro-partitions all data."
+            },
+            {
+              "id": 2,
+              "text": "A query scans a table with 1,000 micro-partitions but only reads 5 of them based on a date filter. This is known as:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Indexing"
+                },
+                {
+                  "label": "B",
+                  "text": "Clustering"
+                },
+                {
+                  "label": "C",
+                  "text": "Pruning"
+                },
+                {
+                  "label": "D",
+                  "text": "Filtering"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Pruning uses metadata to skip irrelevant micro-partitions."
+            },
+            {
+              "id": 3,
+              "text": "GRI has a 500 TB table where queries by 'Store\\_ID' are very slow. What should they consider?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Creating a B-Tree Index."
+                },
+                {
+                  "label": "B",
+                  "text": "Defining a Clustering Key on 'Store\\_ID'."
+                },
+                {
+                  "label": "C",
+                  "text": "Moving the data to a Transient table."
+                },
+                {
+                  "label": "D",
+                  "text": "Increasing the warehouse size to 4XL."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Clustering keys reorganize data to improve pruning on specific columns for massive tables."
+            },
+            {
+              "id": 4,
+              "text": "Where is micro-partition metadata (like Min/Max values) stored?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "In the micro-partition file itself."
+                },
+                {
+                  "label": "B",
+                  "text": "In the Compute Layer."
+                },
+                {
+                  "label": "C",
+                  "text": "In the Cloud Services Layer."
+                },
+                {
+                  "label": "D",
+                  "text": "On the user's local machine."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Metadata is stored and managed in the Cloud Services layer."
+            },
+            {
+              "id": 5,
+              "text": "When data in a micro-partition is \"updated,\" what happens?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The existing micro-partition is modified on disk."
+                },
+                {
+                  "label": "B",
+                  "text": "The micro-partition is deleted and a new one is created."
+                },
+                {
+                  "label": "C",
+                  "text": "The micro-partition is marked as \"dirty\" and new data is added to a new micro-partition."
+                },
+                {
+                  "label": "D",
+                  "text": "Updates are stored in the Result Cache."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Micro-partitions are immutable. Updates result in new micro-partitions being written (enabling Time Travel)."
+            },
+            {
+              "id": 6,
+              "text": "Which view provides the most up-to-date storage metrics for a specific table?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.TABLE\\_STORAGE\\_METRICS"
+                },
+                {
+                  "label": "B",
+                  "text": "INFORMATION\\_SCHEMA.TABLE\\_STORAGE\\_METRICS"
+                },
+                {
+                  "label": "C",
+                  "text": "SHOW TABLES command"
+                },
+                {
+                  "label": "D",
+                  "text": "SNOWFLAKE.CORE.STORAGE\\_HISTORY"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Information Schema is real-time; Account Usage has a latency of up to 2 hours."
+            },
+            {
+              "id": 7,
+              "text": "Data \"Clustering\" in Snowflake is:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "A manual process that requires shutting down the warehouse."
+                },
+                {
+                  "label": "B",
+                  "text": "A background service that re-sorts data to improve pruning."
+                },
+                {
+                  "label": "C",
+                  "text": "Only available for JSON data."
+                },
+                {
+                  "label": "D",
+                  "text": "Used to move data between regions."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Automatic clustering is a serverless background service."
+            },
+            {
+              "id": 8,
+              "text": "Which of the following does NOT contribute to storage costs in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Data in Permanent Tables."
+                },
+                {
+                  "label": "B",
+                  "text": "Data in Fail-safe."
+                },
+                {
+                  "label": "C",
+                  "text": "Data in the Result Cache."
+                },
+                {
+                  "label": "D",
+                  "text": "Data in Time Travel."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Caching does not incur storage fees; only table data (Active, Time Travel, Fail-safe) does."
+            },
+            {
+              "id": 9,
+              "text": "What is the typical size of a micro-partition before compression?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "1 KB to 1 MB"
+                },
+                {
+                  "label": "B",
+                  "text": "50 MB to 500 MB"
+                },
+                {
+                  "label": "C",
+                  "text": "1 GB to 5 GB"
+                },
+                {
+                  "label": "D",
+                  "text": "Exactly 128 MB"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Micro-partitions range from 50MB to 500MB of uncompressed data."
+            },
+            {
+              "id": 10,
+              "text": "A table is naturally clustered by 'Date'. If data is loaded randomly by date, what happens to pruning performance?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It improves automatically."
+                },
+                {
+                  "label": "B",
+                  "text": "It degrades, and a Clustering Key may be needed."
+                },
+                {
+                  "label": "C",
+                  "text": "Snowflake blocks the load."
+                },
+                {
+                  "label": "D",
+                  "text": "The Cloud Services layer fixes it instantly for free."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Natural clustering depends on load order. Random loading degrades pruning performance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2.0",
+      "title": "Account Access and Security",
+      "weightage": "18%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "2.1",
+          "title": "Security Principles",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to ensure that the ACCOUNTADMIN role can only be accessed from the corporate headquarters' IP range. Which feature should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Multi-Factor Authentication (MFA)"
+                },
+                {
+                  "label": "B",
+                  "text": "Network Policy applied at the Account level"
+                },
+                {
+                  "label": "C",
+                  "text": "Network Policy applied at the User level"
+                },
+                {
+                  "label": "D",
+                  "text": "Role-Based Access Control (RBAC)"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "While an account-level policy affects everyone, applying a specific Network Policy to a user (or the user holding the ACCOUNTADMIN role) allows for stricter overrides for sensitive access."
+            },
+            {
+              "id": 2,
+              "text": "Which protocol does Snowflake use to support Federated Authentication and Single Sign-On (SSO)?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "OAuth 2.0"
+                },
+                {
+                  "label": "B",
+                  "text": "SAML 2.0"
+                },
+                {
+                  "label": "C",
+                  "text": "OpenID Connect"
+                },
+                {
+                  "label": "D",
+                  "text": "Active Directory LDAP"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake specifically uses SAML 2.0 for federated authentication with Identity Providers (IdP)."
+            },
+            {
+              "id": 3,
+              "text": "GRI is setting up an automated Python script to load data every night. The script cannot interact with a web browser for MFA. What is the recommended authentication method?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Username and Password in the script"
+                },
+                {
+                  "label": "B",
+                  "text": "Key Pair Authentication"
+                },
+                {
+                  "label": "C",
+                  "text": "Federated SSO"
+                },
+                {
+                  "label": "D",
+                  "text": "Reusable OAuth Token"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Key Pair Authentication is the best practice for service accounts and automated tools that don't support interactive login."
+            },
+            {
+              "id": 4,
+              "text": "A GRI employee is prompted for a Duo Mobile push notification when logging in. Which feature is being utilized?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SSO"
+                },
+                {
+                  "label": "B",
+                  "text": "Federated Authentication"
+                },
+                {
+                  "label": "C",
+                  "text": "Multi-Factor Authentication (MFA)"
+                },
+                {
+                  "label": "D",
+                  "text": "Network Policy"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Snowflake’s built-in MFA is powered by Duo Security."
+            },
+            {
+              "id": 5,
+              "text": "When a Network Policy is applied at both the Account level and the User level, which one takes precedence?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The Account-level policy"
+                },
+                {
+                  "label": "B",
+                  "text": "The User-level policy"
+                },
+                {
+                  "label": "C",
+                  "text": "Both are combined (the most restrictive applies)"
+                },
+                {
+                  "label": "D",
+                  "text": "Neither; they conflict and cause an error"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "User-level network policies always override Account-level policies."
+            },
+            {
+              "id": 6,
+              "text": "GRI wants to disable the ability for users to use a password and force them to use Okta for all logins. What must they configure?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "A Network Policy blocking all IPs"
+                },
+                {
+                  "label": "B",
+                  "text": "Disable MFA"
+                },
+                {
+                  "label": "C",
+                  "text": "Advanced SAML configuration with the SAML\\_IDENTITY\\_PROVIDER parameter"
+                },
+                {
+                  "label": "D",
+                  "text": "Use the SECURITYADMIN role to delete all passwords"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Configuring Federated Auth/SSO via SAML allows the organization to manage authentication through their IdP."
+            },
+            {
+              "id": 7,
+              "text": "Can a Snowflake user have more than one public key assigned for Key Pair Authentication?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, only one key is allowed per user."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, up to two public keys (RSA\\_PUBLIC\\_KEY and RSA\\_PUBLIC\\_KEY\\_2)."
+                },
+                {
+                  "label": "C",
+                  "text": "Yes, up to ten public keys."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if they have the ACCOUNTADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake allows two keys to facilitate key rotation without downtime."
+            },
+            {
+              "id": 8,
+              "text": "An admin at GRI creates a Network Policy but forgets to add their own IP to the \"Allowed\" list before applying it to the account. What happens?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowflake automatically adds the admin's current IP."
+                },
+                {
+                  "label": "B",
+                  "text": "The admin is locked out, and only Snowflake Support can fix it."
+                },
+                {
+                  "label": "C",
+                  "text": "Snowflake blocks the action and issues an error message."
+                },
+                {
+                  "label": "D",
+                  "text": "The policy is created but not activated."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Snowflake includes a safety check; it will not let you apply a policy that blocks your own current connection."
+            },
+            {
+              "id": 9,
+              "text": "Which of the following is NOT a benefit of using Federated Authentication?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Users only have to remember one password."
+                },
+                {
+                  "label": "B",
+                  "text": "Snowflake manages the user's password complexity rules."
+                },
+                {
+                  "label": "C",
+                  "text": "Terminated employees lose access to Snowflake immediately when deactivated in the IdP."
+                },
+                {
+                  "label": "D",
+                  "text": "Reduced administrative overhead for managing user credentials in Snowflake."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "In Federated Auth, the Identity Provider (IdP) manages the password rules, not Snowflake."
+            },
+            {
+              "id": 10,
+              "text": "GRI wants to use a 3rd party tool (like a Data Catalog) that needs to access Snowflake metadata but shouldn't have a permanent password. Which method is most secure?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Key Pair Authentication"
+                },
+                {
+                  "label": "B",
+                  "text": "OAuth"
+                },
+                {
+                  "label": "C",
+                  "text": "MFA"
+                },
+                {
+                  "label": "D",
+                  "text": "Direct Share"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "OAuth allows 3rd party applications to access Snowflake via tokens without sharing user credentials."
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "title": "Entities and Roles",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI’s CFO needs to view billing statements and manage credit usage across all accounts in the organization. Which role should they be granted?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ACCOUNTADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "ORGADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "SYSADMIN"
+                },
+                {
+                  "label": "D",
+                  "text": "SECURITYADMIN"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "ORGADMIN is the organizational-level role for managing accounts and viewing multi-account billing."
+            },
+            {
+              "id": 2,
+              "text": "A new developer needs to create a new Database and a Virtual Warehouse. Which system role is primarily responsible for this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "USERADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "SECURITYADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "SYSADMIN"
+                },
+                {
+                  "label": "D",
+                  "text": "PUBLIC"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "SYSADMIN is the role intended for creating and managing all \"functional\" objects like warehouses and databases."
+            },
+            {
+              "id": 3,
+              "text": "GRI uses a custom role called SALES\\_ANALYST. They want to ensure that SYSADMIN can manage the tables created by this role. How should they set this up?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Grant SYSADMIN to the SALES\\_ANALYST role."
+                },
+                {
+                  "label": "B",
+                  "text": "Grant the SALES\\_ANALYST role to SYSADMIN."
+                },
+                {
+                  "label": "C",
+                  "text": "Give SYSADMIN the ACCOUNTADMIN role."
+                },
+                {
+                  "label": "D",
+                  "text": "This happens automatically and requires no setup."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "In the role hierarchy, granting a lower role to a higher role allows the higher role to inherit all permissions."
+            },
+            {
+              "id": 4,
+              "text": "Which role is the only one that can manage the ORGADMIN role?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ACCOUNTADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "SECURITYADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "ORGADMIN (it is self-managing)"
+                },
+                {
+                  "label": "D",
+                  "text": "Only Snowflake Support"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Only a user with the ORGADMIN role can grant the ORGADMIN role to other users."
+            },
+            {
+              "id": 5,
+              "text": "A user at GRI has been granted both ANALYST and DEVELOPER roles. When they log in, which permissions do they have?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Both roles' permissions combined automatically."
+                },
+                {
+                  "label": "B",
+                  "text": "Only the permissions of the PUBLIC role until they switch roles."
+                },
+                {
+                  "label": "C",
+                  "text": "Only the permissions of their \"Primary Role\" designated in their user profile."
+                },
+                {
+                  "label": "D",
+                  "text": "No permissions until they use the USE ROLE command."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Every user has a default/primary role. While they can switch, their session starts with that primary role."
+            },
+            {
+              "id": 6,
+              "text": "Who is the \"Owner\" of an object in Snowflake's Discretionary Access Control (DAC) model?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The user who created the object."
+                },
+                {
+                  "label": "B",
+                  "text": "The ACCOUNTADMIN role."
+                },
+                {
+                  "label": "C",
+                  "text": "The role that was active when the object was created."
+                },
+                {
+                  "label": "D",
+                  "text": "The SYSADMIN role."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Ownership is tied to a **Role**, not a User."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to prevent a data engineer from granting access to their own tables and instead have a central admin manage all grants. What should they implement?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "A standard schema."
+                },
+                {
+                  "label": "B",
+                  "text": "A Managed Access Schema."
+                },
+                {
+                  "label": "C",
+                  "text": "Remove the SYSADMIN role."
+                },
+                {
+                  "label": "D",
+                  "text": "Use a Reader Account."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "In a Managed Access Schema, object owners lose the ability to grant permissions; it is centralized to the schema owner."
+            },
+            {
+              "id": 8,
+              "text": "Which system role is best suited for creating and dropping users and roles, but should NOT have access to query business data?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ACCOUNTADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "SECURITYADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "USERADMIN"
+                },
+                {
+                  "label": "D",
+                  "text": "SYSADMIN"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "USERADMIN is dedicated to user and role management to help separate concerns."
+            },
+            {
+              "id": 9,
+              "text": "If a role is revoked from a user while they are in an active session using that role, what happens?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The session is immediately terminated."
+                },
+                {
+                  "label": "B",
+                  "text": "The user can continue using the role until the session ends or they switch roles."
+                },
+                {
+                  "label": "C",
+                  "text": "The user is downgraded to the PUBLIC role immediately."
+                },
+                {
+                  "label": "D",
+                  "text": "Snowflake freezes the account."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Revocations do not affect currently active sessions; they apply to the next session or role switch."
+            },
+            {
+              "id": 10,
+              "text": "The SECURITYADMIN role inherits the privileges of which other role?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ACCOUNTADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "USERADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "SYSADMIN"
+                },
+                {
+                  "label": "D",
+                  "text": "PUBLIC"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "SECURITYADMIN is a parent to USERADMIN in the default system hierarchy."
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "title": "Data Governance",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI needs to hide the first 12 digits of customer credit card numbers for all roles except BILLING\\_ADMIN. Which feature should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Row Access Policy"
+                },
+                {
+                  "label": "B",
+                  "text": "Dynamic Data Masking"
+                },
+                {
+                  "label": "C",
+                  "text": "Secure View"
+                },
+                {
+                  "label": "D",
+                  "text": "Object Tagging"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Dynamic Data Masking is a column-level security feature used to mask sensitive data."
+            },
+            {
+              "id": 2,
+              "text": "A manager at GRI should only see sales records from the \"North\" region. Which feature should be used to enforce this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Column-level masking"
+                },
+                {
+                  "label": "B",
+                  "text": "Row Access Policy"
+                },
+                {
+                  "label": "C",
+                  "text": "Information Schema"
+                },
+                {
+                  "label": "D",
+                  "text": "Network Policy"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Row Access Policies filter which rows are returned based on the user's role or attributes."
+            },
+            {
+              "id": 3,
+              "text": "GRI wants to track which users have queried a specific table containing PII over the last 6 months. Where can they find this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "INFORMATION\\_SCHEMA.QUERY\\_HISTORY"
+                },
+                {
+                  "label": "B",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.ACCESS\\_HISTORY"
+                },
+                {
+                  "label": "C",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.QUERY\\_HISTORY"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowsight Dashboards only"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "ACCESS\\_HISTORY specifically tracks which columns and tables were accessed by users."
+            },
+            {
+              "id": 4,
+              "text": "Which view allows an admin to see a list of all tables in the database that are tagged as \"High Sensitivity\"?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "INFORMATION\\_SCHEMA.TABLES"
+                },
+                {
+                  "label": "B",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.TAG\\_REFERENCES"
+                },
+                {
+                  "label": "C",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.OBJECT\\_ATTRIBUTES"
+                },
+                {
+                  "label": "D",
+                  "text": "SNOWFLAKE.CORE.TAG\\_LIST"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "TAG\\_REFERENCES allows you to track where tags are applied across the account."
+            },
+            {
+              "id": 5,
+              "text": "When sharing a view with an external partner, why should GRI use a \"Secure View\"?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "To encrypt the data during transit."
+                },
+                {
+                  "label": "B",
+                  "text": "To prevent the partner from seeing the underlying table names and JOIN logic via GET\\_DDL."
+                },
+                {
+                  "label": "C",
+                  "text": "To make the view read-only."
+                },
+                {
+                  "label": "D",
+                  "text": "To improve the query performance for the partner."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Secure views prevent users from viewing the definition of the view or using optimizations that might leak data patterns."
+            },
+            {
+              "id": 6,
+              "text": "What is the maximum number of days of historical data available in the ACCOUNT\\_USAGE schema?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "14 days"
+                },
+                {
+                  "label": "B",
+                  "text": "30 days"
+                },
+                {
+                  "label": "C",
+                  "text": "180 days"
+                },
+                {
+                  "label": "D",
+                  "text": "365 days"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "ACCOUNT\\_USAGE views retain data for up to 1 year."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to automatically apply a masking policy to any column that is tagged with the string 'PII'. This is called:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Dynamic Masking"
+                },
+                {
+                  "label": "B",
+                  "text": "Tag-Based Masking"
+                },
+                {
+                  "label": "C",
+                  "text": "Row-Level Security"
+                },
+                {
+                  "label": "D",
+                  "text": "Conditional Masking"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Tag-Based Masking allows policies to be applied automatically to any object carrying a specific tag."
+            },
+            {
+              "id": 8,
+              "text": "Which of the following describes \"Data Lineage\" in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The history of which users logged into the account."
+                },
+                {
+                  "label": "B",
+                  "text": "The path of how data flowed from source objects to target objects."
+                },
+                {
+                  "label": "C",
+                  "text": "The geographical location where data is stored."
+                },
+                {
+                  "label": "D",
+                  "text": "The list of versions of a stored procedure."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Access History and Object Dependencies help define data lineage."
+            },
+            {
+              "id": 9,
+              "text": "Which schema contains real-time metadata but has no historical retention beyond currently existing objects?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE"
+                },
+                {
+                  "label": "B",
+                  "text": "INFORMATION\\_SCHEMA"
+                },
+                {
+                  "label": "C",
+                  "text": "PUBLIC"
+                },
+                {
+                  "label": "D",
+                  "text": "METADATA\\_SCHEMA"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "INFORMATION\\_SCHEMA provides a real-time view of current objects."
+            },
+            {
+              "id": 10,
+              "text": "Can a masking policy be applied to a column that is part of a Cluster Key?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes, without restriction."
+                },
+                {
+                  "label": "B",
+                  "text": "No, Snowflake does not allow masking on columns used for clustering."
+                },
+                {
+                  "label": "C",
+                  "text": "Yes, but only for ACCOUNTADMIN."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if the table is a Transient table."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Masking policies cannot be applied to columns used as clustering keys."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3.0",
+      "title": "Performance and Cost Optimization Concepts",
+      "weightage": "16%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "3.1",
+          "title": "Explain the use of the Query Profile",
+          "questions": [
+            {
+              "id": 1,
+              "text": "An analyst at GRI notices a query is running significantly slower than usual. Upon checking the Query Profile, they see \"Remote Disk Spilling.\" What does this indicate?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The query is perfectly optimized."
+                },
+                {
+                  "label": "B",
+                  "text": "The warehouse ran out of memory (RAM) and local SSD, and had to use slower cloud storage."
+                },
+                {
+                  "label": "C",
+                  "text": "The result was fetched from the Result Cache."
+                },
+                {
+                  "label": "D",
+                  "text": "There is a network issue between the warehouse and the database."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Remote spilling is the slowest form of data processing and indicates the warehouse size is too small for the query's memory requirements."
+            },
+            {
+              "id": 2,
+              "text": "In the Query Profile, what does the \"Partitions Scanned\" vs \"Partitions Total\" metric help you evaluate?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Warehouse sizing efficiency."
+                },
+                {
+                  "label": "B",
+                  "text": "Pruning efficiency."
+                },
+                {
+                  "label": "C",
+                  "text": "Data compression ratios."
+                },
+                {
+                  "label": "D",
+                  "text": "Network latency."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "If a query scans many partitions but returns few rows, pruning is inefficient, possibly suggesting a need for a clustering key."
+            },
+            {
+              "id": 3,
+              "text": "GRI wants to see why a query from 3 days ago was slow. Where can they find the Query Profile for historical queries?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Only in the active session."
+                },
+                {
+                  "label": "B",
+                  "text": "In the Query History page of Snowsight."
+                },
+                {
+                  "label": "C",
+                  "text": "In the INFORMATION\\_SCHEMA.QUERY\\_HISTORY view."
+                },
+                {
+                  "label": "D",
+                  "text": "It is deleted immediately after the query finishes."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowsight maintains the visual Query Profile for queries run within the last 14 days."
+            },
+            {
+              "id": 4,
+              "text": "If a Query Profile shows that 80% of the time was spent in \"Query Compilation,\" what is likely the cause?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Large data volume."
+                },
+                {
+                  "label": "B",
+                  "text": "Highly complex SQL with many joins or nested views."
+                },
+                {
+                  "label": "C",
+                  "text": "Small warehouse size."
+                },
+                {
+                  "label": "D",
+                  "text": "Data spilling to remote disk."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Compilation happens in the Cloud Services layer and is driven by query complexity, not data volume."
+            },
+            {
+              "id": 5,
+              "text": "Which operator in the Query Profile tree represents the final step where data is sent back to the user?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "TableScan"
+                },
+                {
+                  "label": "B",
+                  "text": "Join"
+                },
+                {
+                  "label": "C",
+                  "text": "Result"
+                },
+                {
+                  "label": "D",
+                  "text": "Aggregate"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "The Result operator represents the final output of the query."
+            },
+            {
+              "id": 6,
+              "text": "A GRI admin sees \"Local Disk Spilling\" in a profile. What is the immediate recommendation?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Increase the warehouse size (Scale Up)."
+                },
+                {
+                  "label": "B",
+                  "text": "Add more clusters (Scale Out)."
+                },
+                {
+                  "label": "C",
+                  "text": "Turn on Search Optimization."
+                },
+                {
+                  "label": "D",
+                  "text": "Do nothing; this is normal."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "Local spilling occurs when RAM is exhausted. Scaling up provides more RAM per node."
+            },
+            {
+              "id": 7,
+              "text": "The Query Profile shows \"Metadata Only\" for a specific query. This means:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The data was corrupted."
+                },
+                {
+                  "label": "B",
+                  "text": "The query was answered entirely by the Cloud Services layer without a warehouse."
+                },
+                {
+                  "label": "C",
+                  "text": "The warehouse was too small to read the data."
+                },
+                {
+                  "label": "D",
+                  "text": "The user doesn't have permissions to see the data."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Simple metadata queries (like COUNT(\\*)) don't require compute."
+            },
+            {
+              "id": 8,
+              "text": "If the \"Exploding Joins\" warning appears in the Query Profile, what is happening?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The warehouse is crashing."
+                },
+                {
+                  "label": "B",
+                  "text": "The join is producing significantly more rows than the input tables (likely a Cartesian product)."
+                },
+                {
+                  "label": "C",
+                  "text": "The query is too fast for the profile to track."
+                },
+                {
+                  "label": "D",
+                  "text": "The tables are not clustered."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Exploding joins indicate a logic error in the SQL JOIN condition."
+            },
+            {
+              "id": 9,
+              "text": "Which metric in the Query Profile indicates how much data was sent over the network between warehouse nodes?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Bytes scanned"
+                },
+                {
+                  "label": "B",
+                  "text": "Bytes sent over the network"
+                },
+                {
+                  "label": "C",
+                  "text": "Bytes spilled to local disk"
+                },
+                {
+                  "label": "D",
+                  "text": "Cloud services execution time"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "This helps identify if data shuffling between nodes is causing a bottleneck."
+            },
+            {
+              "id": 10,
+              "text": "Can you compare two query profiles side-by-side in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, only one at a time."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, by selecting multiple queries in Query History and choosing \"Compare.\""
+                },
+                {
+                  "label": "C",
+                  "text": "Yes, but only in the Business Critical edition."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if they were run by the same user."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowsight allows comparing execution plans to see why performance differs."
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "title": "Virtual Warehouse Configuration",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI's BI dashboard is used by 500 people simultaneously. Queries are queuing. What should they do?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Increase the warehouse size from Small to Large."
+                },
+                {
+                  "label": "B",
+                  "text": "Enable a Multi-cluster warehouse and set it to Auto-scale."
+                },
+                {
+                  "label": "C",
+                  "text": "Turn off Auto-suspend."
+                },
+                {
+                  "label": "D",
+                  "text": "Switch to a Transient table."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Multi-cluster warehouses solve concurrency (queuing) by scaling \"Out.\""
+            },
+            {
+              "id": 2,
+              "text": "A warehouse is configured with MIN\\_CLUSTER\\_COUNT \\= 2 and MAX\\_CLUSTER\\_COUNT \\= 2. What mode is this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Auto-scale"
+                },
+                {
+                  "label": "B",
+                  "text": "Maximized"
+                },
+                {
+                  "label": "C",
+                  "text": "Economy"
+                },
+                {
+                  "label": "D",
+                  "text": "Standard"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "When Min and Max are equal, the warehouse is in Maximized mode."
+            },
+            {
+              "id": 3,
+              "text": "In \"Economy\" scaling policy, when does Snowflake start a new cluster?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Immediately when a query is queued."
+                },
+                {
+                  "label": "B",
+                  "text": "Only if there is enough load to keep the cluster busy for at least 6 minutes."
+                },
+                {
+                  "label": "C",
+                  "text": "When the first cluster reaches 50% capacity."
+                },
+                {
+                  "label": "D",
+                  "text": "Every hour on the hour."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Economy policy prioritizes cost savings over immediate performance."
+            },
+            {
+              "id": 4,
+              "text": "GRI scales their warehouse from X-Small to Small. How much does the credit cost per hour change?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It stays the same."
+                },
+                {
+                  "label": "B",
+                  "text": "It doubles."
+                },
+                {
+                  "label": "C",
+                  "text": "It increases by 1 credit."
+                },
+                {
+                  "label": "D",
+                  "text": "It triples."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Credit costs double with each T-shirt size increase."
+            },
+            {
+              "id": 5,
+              "text": "Which setting prevents a single user from running a query that consumes credits for 24 hours straight?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "AUTO\\_SUSPEND"
+                },
+                {
+                  "label": "B",
+                  "text": "STATEMENT\\_TIMEOUT\\_IN\\_SECONDS"
+                },
+                {
+                  "label": "C",
+                  "text": "AUTO\\_RESUME"
+                },
+                {
+                  "label": "D",
+                  "text": "MAX\\_CONCURRENCY\\_LEVEL"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "This parameter kills queries that exceed a specific time limit."
+            },
+            {
+              "id": 6,
+              "text": "A warehouse is set to AUTO\\_SUSPEND \\= 60. A query finishes at 10:00:00. No other queries arrive. When does it stop charging credits?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "10:00:00"
+                },
+                {
+                  "label": "B",
+                  "text": "10:01:00"
+                },
+                {
+                  "label": "C",
+                  "text": "10:05:00"
+                },
+                {
+                  "label": "D",
+                  "text": "It never stops unless manually suspended."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "It suspends after 60 seconds of inactivity."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to ensure that a warehouse is always available for a high-priority CEO dashboard. Which setting is most critical?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "AUTO\\_SUSPEND \\= 0"
+                },
+                {
+                  "label": "B",
+                  "text": "AUTO\\_RESUME \\= TRUE"
+                },
+                {
+                  "label": "C",
+                  "text": "SCALING\\_POLICY \\= 'ECONOMY'"
+                },
+                {
+                  "label": "D",
+                  "text": "WAREHOUSE\\_SIZE \\= '4XL'"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Auto-resume ensures the warehouse wakes up as soon as the CEO opens the dashboard."
+            },
+            {
+              "id": 8,
+              "text": "Can a Virtual Warehouse be resized while it is actively running queries?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it must be suspended first."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, and the new size applies to all currently running queries."
+                },
+                {
+                  "label": "C",
+                  "text": "Yes, but the new size only applies to *new* queries submitted after the change."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if it is a Multi-cluster warehouse."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Resizing is dynamic but doesn't affect queries already in progress."
+            },
+            {
+              "id": 9,
+              "text": "Which role is required to change the size of a warehouse?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Any user with USAGE on the warehouse."
+                },
+                {
+                  "label": "B",
+                  "text": "Only ACCOUNTADMIN."
+                },
+                {
+                  "label": "C",
+                  "text": "A role with the MODIFY privilege on the warehouse."
+                },
+                {
+                  "label": "D",
+                  "text": "Only the ORGADMIN."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "MODIFY (or OWNERSHIP) is required to alter warehouse parameters."
+            },
+            {
+              "id": 10,
+              "text": "What is the primary difference between a \"Standard\" and \"Snowpark-Optimized\" warehouse?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowpark-Optimized has more CPU."
+                },
+                {
+                  "label": "B",
+                  "text": "Snowpark-Optimized has 16x more memory (RAM) per node."
+                },
+                {
+                  "label": "C",
+                  "text": "Standard doesn't support Python."
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpark-Optimized is free for the first hour."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowpark-Optimized warehouses are designed for memory-intensive ML workloads."
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "title": "Performance Tools",
+          "questions": [
+            {
+              "id": 1,
+              "text": "Which feature allows Snowflake to automatically offload parts of a query to a serverless pool of compute to speed it up?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Multi-cluster scaling"
+                },
+                {
+                  "label": "B",
+                  "text": "Query Acceleration Service (QAS)"
+                },
+                {
+                  "label": "C",
+                  "text": "Automatic Clustering"
+                },
+                {
+                  "label": "D",
+                  "text": "Search Optimization"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "QAS acts like an \"extra boost\" for specific query types without resizing the warehouse."
+            },
+            {
+              "id": 2,
+              "text": "GRI notices that a specific warehouse has a \"Load Monitoring\" chart showing a consistent red bar (Queued queries). What is the recommended action to improve concurrency?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Increase warehouse size (Scale Up)."
+                },
+                {
+                  "label": "B",
+                  "text": "Increase Max Clusters (Scale Out)."
+                },
+                {
+                  "label": "C",
+                  "text": "Decrease Auto-suspend time."
+                },
+                {
+                  "label": "D",
+                  "text": "Re-cluster the tables."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Queuing is a sign that there aren't enough clusters to handle the volume of queries."
+            },
+            {
+              "id": 3,
+              "text": "Does the Query Acceleration Service (QAS) cost additional credits?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is included in the warehouse price."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it is billed as a serverless cost."
+                },
+                {
+                  "label": "C",
+                  "text": "Only in the Business Critical edition."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if the query takes longer than 10 minutes."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "QAS is a serverless feature billed based on usage."
+            },
+            {
+              "id": 4,
+              "text": "When comparing \"Scaling Up\" vs \"Scaling Out,\" which one is better for a single query that processes 100TB of data?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Scaling Out"
+                },
+                {
+                  "label": "B",
+                  "text": "Scaling Up"
+                },
+                {
+                  "label": "C",
+                  "text": "Both are equal."
+                },
+                {
+                  "label": "D",
+                  "text": "Neither; use a result cache."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Scaling \"Up\" (larger size) gives that single query more resources to finish faster."
+            },
+            {
+              "id": 5,
+              "text": "Which view in the SNOWFLAKE database helps GRI monitor warehouse load history over the last year?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "WAREHOUSE\\_LOAD\\_HISTORY"
+                },
+                {
+                  "label": "B",
+                  "text": "QUERY\\_HISTORY"
+                },
+                {
+                  "label": "C",
+                  "text": "METERING\\_HISTORY"
+                },
+                {
+                  "label": "D",
+                  "text": "LOAD\\_METRICS\\_YEARLY"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "This view provides average running and queued queries over time."
+            },
+            {
+              "id": 6,
+              "text": "What is the maximum number of clusters a Multi-cluster warehouse can have?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "5"
+                },
+                {
+                  "label": "B",
+                  "text": "10 (unless a limit increase is requested)"
+                },
+                {
+                  "label": "C",
+                  "text": "50"
+                },
+                {
+                  "label": "D",
+                  "text": "Unlimited"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The default limit is 10 clusters."
+            },
+            {
+              "id": 7,
+              "text": "A query is eligible for QAS. How can a user verify if QAS actually helped the query?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "By looking at the Query Profile \"Query Acceleration\" stats."
+                },
+                {
+                  "label": "B",
+                  "text": "By checking their credit bill."
+                },
+                {
+                  "label": "C",
+                  "text": "By running DESCRIBE WAREHOUSE."
+                },
+                {
+                  "label": "D",
+                  "text": "It is impossible to know."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "The profile shows how many partitions were offloaded to the service."
+            },
+            {
+              "id": 8,
+              "text": "GRI wants to optimize their \"Standard\" scaling policy to be more aggressive in shutting down idle clusters. What should they do?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "They cannot; \"Standard\" is fixed."
+                },
+                {
+                  "label": "B",
+                  "text": "Switch to \"Economy\" policy."
+                },
+                {
+                  "label": "C",
+                  "text": "Use a Resource Monitor."
+                },
+                {
+                  "label": "D",
+                  "text": "Increase the Max Cluster count."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Economy policy is more conservative about starting clusters and more aggressive about stopping them."
+            },
+            {
+              "id": 9,
+              "text": "If a warehouse is resized from Large to Small while a Large query is running, what size does the running query use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It is immediately killed."
+                },
+                {
+                  "label": "B",
+                  "text": "It continues running on the Large resources until finished."
+                },
+                {
+                  "label": "C",
+                  "text": "It is throttled to Small speed instantly."
+                },
+                {
+                  "label": "D",
+                  "text": "It restarts automatically on the Small warehouse."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Running queries are not interrupted by resizing operations."
+            },
+            {
+              "id": 10,
+              "text": "Which tool would you use to find the \"peak\" concurrency hour for your Snowflake account?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Query Profile"
+                },
+                {
+                  "label": "B",
+                  "text": "Warehouse Load Monitoring (Snowsight)"
+                },
+                {
+                  "label": "C",
+                  "text": "Resource Monitor"
+                },
+                {
+                  "label": "D",
+                  "text": "Data Marketplace"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The load monitoring charts show concurrency spikes visually."
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "title": "Query Performance Optimization",
+          "questions": [
+            {
+              "id": 1,
+              "text": "A user runs SELECT \\* FROM table twice within 5 minutes. The second time is instant. Which cache was used?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Metadata Cache"
+                },
+                {
+                  "label": "B",
+                  "text": "Warehouse Cache (SSD)"
+                },
+                {
+                  "label": "C",
+                  "text": "Result Cache"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpark Cache"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Result cache stores query results for 24 hours."
+            },
+            {
+              "id": 2,
+              "text": "Under what condition is the Result Cache purged or bypassed?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "After 24 hours."
+                },
+                {
+                  "label": "B",
+                  "text": "If the underlying data in the table changes."
+                },
+                {
+                  "label": "C",
+                  "text": "If the user changes their active role (sometimes)."
+                },
+                {
+                  "label": "D",
+                  "text": "All of the above."
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "Result cache is very sensitive to data and context changes."
+            },
+            {
+              "id": 3,
+              "text": "GRI has a table with 1 Billion rows. They frequently run queries like WHERE User\\_Email \\= 'abc@xyz.com'. What optimization is best?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Materialized View"
+                },
+                {
+                  "label": "B",
+                  "text": "Search Optimization Service (SOS)"
+                },
+                {
+                  "label": "C",
+                  "text": "Scaling Up to 6XL"
+                },
+                {
+                  "label": "D",
+                  "text": "Zero-copy Cloning"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "SOS is specifically for \"point lookups\" (finding specific values in large tables)."
+            },
+            {
+              "id": 4,
+              "text": "What is a major limitation of Materialized Views in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "They cannot be queried."
+                },
+                {
+                  "label": "B",
+                  "text": "They only work on a single table (no joins allowed in the definition)."
+                },
+                {
+                  "label": "C",
+                  "text": "They don't update automatically."
+                },
+                {
+                  "label": "D",
+                  "text": "They are free to maintain."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake Materialized Views currently do not support JOINS in their definition."
+            },
+            {
+              "id": 5,
+              "text": "A warehouse is suspended. Which cache is immediately lost?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Result Cache"
+                },
+                {
+                  "label": "B",
+                  "text": "Metadata Cache"
+                },
+                {
+                  "label": "C",
+                  "text": "Warehouse/Local SSD Cache"
+                },
+                {
+                  "label": "D",
+                  "text": "All of them"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "The local SSD cache is tied to the running compute nodes."
+            },
+            {
+              "id": 6,
+              "text": "GRI uses a Clustering Key on their Sales table. What background service maintains this clustering?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Query Acceleration Service"
+                },
+                {
+                  "label": "B",
+                  "text": "Automatic Clustering (Serverless)"
+                },
+                {
+                  "label": "C",
+                  "text": "Snowpipe"
+                },
+                {
+                  "label": "D",
+                  "text": "Cloud Services Optimizer"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Automatic Clustering is a serverless maintenance service."
+            },
+            {
+              "id": 7,
+              "text": "How can a user \"force\" Snowflake to bypass the Result Cache for testing purposes?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Suspend the warehouse."
+                },
+                {
+                  "label": "B",
+                  "text": "Use the parameter USE\\_CACHED\\_RESULT \\= FALSE."
+                },
+                {
+                  "label": "C",
+                  "text": "Change the table name."
+                },
+                {
+                  "label": "D",
+                  "text": "Log out and log back in."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "This session parameter disables the result cache."
+            },
+            {
+              "id": 8,
+              "text": "Which optimization technique uses \"shredding\" to improve performance on VARIANT (JSON) columns?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Clustering"
+                },
+                {
+                  "label": "B",
+                  "text": "Automatic optimization of semi-structured data."
+                },
+                {
+                  "label": "C",
+                  "text": "Materialized Views."
+                },
+                {
+                  "label": "D",
+                  "text": "Search Optimization."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake automatically optimizes JSON storage to make querying as fast as relational data."
+            },
+            {
+              "id": 9,
+              "text": "When should GRI use a \"Materialized View\" instead of a \"Standard View\"?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "When the query is simple and runs fast."
+                },
+                {
+                  "label": "B",
+                  "text": "When the query involves complex aggregations and the results are needed frequently."
+                },
+                {
+                  "label": "C",
+                  "text": "When they want to hide SQL logic."
+                },
+                {
+                  "label": "D",
+                  "text": "When they want to avoid storage costs."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "MVs trade storage and maintenance costs for significantly faster query speeds."
+            },
+            {
+              "id": 10,
+              "text": "Does \"Search Optimization\" require a warehouse to be running to serve results?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is serverless."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, the query still runs on a Virtual Warehouse, but it uses the SOS index to prune data."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the table is larger than 10TB."
+                },
+                {
+                  "label": "D",
+                  "text": "Only for the ACCOUNTADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "SOS helps the warehouse prune data; it doesn't replace the warehouse."
+            }
+          ]
+        },
+        {
+          "id": "3.5",
+          "title": "Cost Optimization Concepts",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to be notified when their \"Dev\\_WH\" consumes more than 500 credits. Which feature should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Resource Monitor"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowflake Budget"
+                },
+                {
+                  "label": "C",
+                  "text": "ACCOUNT\\_USAGE views"
+                },
+                {
+                  "label": "D",
+                  "text": "Storage Monitor"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "Resource monitors are the primary tool for setting credit quotas and alerts."
+            },
+            {
+              "id": 2,
+              "text": "A Resource Monitor is set to \"Suspend Immediately\" at 100%. What happens to queries currently running when the limit is hit?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "They are allowed to finish."
+                },
+                {
+                  "label": "B",
+                  "text": "They are canceled immediately."
+                },
+                {
+                  "label": "C",
+                  "text": "They are moved to another warehouse."
+                },
+                {
+                  "label": "D",
+                  "text": "They are paused and resumed next month."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "\"Suspend Immediately\" kills all active queries."
+            },
+            {
+              "id": 3,
+              "text": "Which Snowflake cost represents the \"Average daily storage\" across the month?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Compute Cost"
+                },
+                {
+                  "label": "B",
+                  "text": "Storage Cost"
+                },
+                {
+                  "label": "C",
+                  "text": "Data Transfer Cost"
+                },
+                {
+                  "label": "D",
+                  "text": "Cloud Services Cost"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Storage is billed based on average monthly usage in Terabytes."
+            },
+            {
+              "id": 4,
+              "text": "GRI sees a charge for \"Cloud Services\" on their bill. Under what rule are they charged for this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It is always 10% of the bill."
+                },
+                {
+                  "label": "B",
+                  "text": "They are only charged if Cloud Services usage exceeds 10% of their total daily compute."
+                },
+                {
+                  "label": "C",
+                  "text": "It is a flat fee of $100/month."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if they use the ORGADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake provides a 10% credit for cloud services."
+            },
+            {
+              "id": 5,
+              "text": "Which view provides a 365-day history of every credit spent by every warehouse in the account?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "INFORMATION\\_SCHEMA.WAREHOUSE\\_METERING\\_HISTORY"
+                },
+                {
+                  "label": "B",
+                  "text": "SNOWFLAKE.ACCOUNT\\_USAGE.WAREHOUSE\\_METERING\\_HISTORY"
+                },
+                {
+                  "label": "C",
+                  "text": "SNOWFLAKE.CORE.BILLING\\_REPORT"
+                },
+                {
+                  "label": "D",
+                  "text": "METERING\\_DAILY"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "ACCOUNT\\_USAGE contains the 1-year historical view."
+            },
+            {
+              "id": 6,
+              "text": "GRI wants to assign costs to the \"Marketing\" department. How should they label their warehouses?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Using Object Tags (e.g., Cost\\_Center \\= 'Marketing')."
+                },
+                {
+                  "label": "B",
+                  "text": "By naming the warehouse \"Marketing\\_WH\"."
+                },
+                {
+                  "label": "C",
+                  "text": "By creating a separate Snowflake account for Marketing."
+                },
+                {
+                  "label": "D",
+                  "text": "Using a Resource Monitor named \"Marketing\"."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "Tagging objects is the best practice for cost attribution and reporting."
+            },
+            {
+              "id": 7,
+              "text": "Does \"Fail-safe\" storage incur a cost?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is a free service provided by Snowflake."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it is billed at the same rate as standard storage."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if you actually recover data from it."
+                },
+                {
+                  "label": "D",
+                  "text": "Only for the Standard edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Data in Fail-safe contributes to your total monthly storage bill."
+            },
+            {
+              "id": 8,
+              "text": "Which of the following is a \"Serverless\" cost in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Virtual Warehouse usage"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowpipe data ingestion"
+                },
+                {
+                  "label": "C",
+                  "text": "Data transfer to another cloud region"
+                },
+                {
+                  "label": "D",
+                  "text": "SSO configuration"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowpipe, Automatic Clustering, and MV maintenance are serverless costs."
+            },
+            {
+              "id": 9,
+              "text": "GRI wants to prevent an accidental \"infinite loop\" query from costing $10,000. What is the best safety measure?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Set a STATEMENT\\_TIMEOUT\\_IN\\_SECONDS at the account or warehouse level."
+                },
+                {
+                  "label": "B",
+                  "text": "Delete the user's account."
+                },
+                {
+                  "label": "C",
+                  "text": "Use a Transient table."
+                },
+                {
+                  "label": "D",
+                  "text": "Disable Auto-resume."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "This ensures queries are killed after a reasonable amount of time."
+            },
+            {
+              "id": 10,
+              "text": "A Snowflake \"Budget\" (the specific feature) can monitor:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Only warehouses."
+                },
+                {
+                  "label": "B",
+                  "text": "Only storage."
+                },
+                {
+                  "label": "C",
+                  "text": "A custom group of Snowflake objects (Warehouses, Pipes, MVs, etc.)."
+                },
+                {
+                  "label": "D",
+                  "text": "Only the ACCOUNTADMIN salary."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Budgets are flexible and can track groups of objects to alert on total spend."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4.0",
+      "title": "Data Loading and Unloading",
+      "weightage": "12%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "4.1",
+          "title": "Data Loading Concepts & Best Practices",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to load data from an AWS S3 bucket. Which type of stage is required?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "User Stage"
+                },
+                {
+                  "label": "B",
+                  "text": "Table Stage"
+                },
+                {
+                  "label": "C",
+                  "text": "Named Internal Stage"
+                },
+                {
+                  "label": "D",
+                  "text": "External Stage"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "External stages point to cloud storage locations (S3, GCS, Azure) outside of Snowflake."
+            },
+            {
+              "id": 2,
+              "text": "A data engineer at GRI is loading files that are 2 GB each. What is the Snowflake best practice for optimal load performance?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Load them as-is to save time on splitting."
+                },
+                {
+                  "label": "B",
+                  "text": "Split the files into 100-250 MB compressed chunks."
+                },
+                {
+                  "label": "C",
+                  "text": "Convert the files to a single large JSON VARIANT."
+                },
+                {
+                  "label": "D",
+                  "text": "Use a 4XL warehouse to process the large file."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake processes data in parallel; smaller, balanced files allow multiple threads to work simultaneously."
+            },
+            {
+              "id": 3,
+              "text": "GRI's web app sends sales data every minute. Which feature provides the most cost-effective, near real-time ingestion?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Bulk loading with COPY INTO every minute."
+                },
+                {
+                  "label": "B",
+                  "text": "Snowpipe."
+                },
+                {
+                  "label": "C",
+                  "text": "INSERT INTO statements for every sale."
+                },
+                {
+                  "label": "D",
+                  "text": "External Tables."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowpipe is designed for continuous, near real-time ingestion using serverless compute."
+            },
+            {
+              "id": 4,
+              "text": "Which internal stage is automatically available to every user and does not need to be created?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Named Internal Stage"
+                },
+                {
+                  "label": "B",
+                  "text": "User Stage"
+                },
+                {
+                  "label": "C",
+                  "text": "Table Stage"
+                },
+                {
+                  "label": "D",
+                  "text": "Schema Stage"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The User Stage (@\\~) is unique to each user and created automatically."
+            },
+            {
+              "id": 5,
+              "text": "When loading data, which architectural layer handles the \"metadata\" about which files have already been loaded to prevent duplication?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Storage Layer"
+                },
+                {
+                  "label": "B",
+                  "text": "Compute Layer (Virtual Warehouse)"
+                },
+                {
+                  "label": "C",
+                  "text": "Cloud Services Layer"
+                },
+                {
+                  "label": "D",
+                  "text": "Network Layer"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Cloud Services manages load metadata (load history) to prevent re-loading the same file."
+            },
+            {
+              "id": 6,
+              "text": "GRI wants to load data from S3 without providing secret keys in every SQL command. What object should they use to store credentials securely?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Secret Store"
+                },
+                {
+                  "label": "B",
+                  "text": "Storage Integration"
+                },
+                {
+                  "label": "C",
+                  "text": "Credential Schema"
+                },
+                {
+                  "label": "D",
+                  "text": "Security Role"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "A Storage Integration object allows Snowflake to access cloud storage via IAM roles instead of credentials."
+            },
+            {
+              "id": 7,
+              "text": "A warehouse is suspended. Can Snowpipe still load data?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it requires an active warehouse."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it uses Snowflake-managed serverless compute."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if it is the Standard edition."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if the AUTO\\_RESUME setting is on."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowpipe is a serverless feature and does not depend on the user's Virtual Warehouses."
+            },
+            {
+              "id": 8,
+              "text": "GRI organizes their S3 bucket by date: /logs/2024/01/01/. How does this help Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It doesn't; Snowflake ignores folder structures."
+                },
+                {
+                  "label": "B",
+                  "text": "It allows for \"path-based\" loading to limit the number of files scanned in a COPY command."
+                },
+                {
+                  "label": "C",
+                  "text": "It automatically clusters the table by date."
+                },
+                {
+                  "label": "D",
+                  "text": "It makes the data encrypted."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Using paths (prefixes) allows Snowflake to efficiently filter files during the load process."
+            },
+            {
+              "id": 9,
+              "text": "Which file format is NOT natively supported for direct loading into Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Parquet"
+                },
+                {
+                  "label": "B",
+                  "text": "Avro"
+                },
+                {
+                  "label": "C",
+                  "text": "JSON"
+                },
+                {
+                  "label": "D",
+                  "text": "HTML"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "Snowflake supports CSV, JSON, XML, Avro, Parquet, and ORC."
+            },
+            {
+              "id": 10,
+              "text": "Does Snowflake automatically detect the compression type of a file during the load process?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, you must specify it in the FILE\\_FORMAT."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, for supported types like GZIP, BZIP2, and ZSTD."
+                },
+                {
+                  "label": "C",
+                  "text": "Only for CSV files."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if using an External Stage."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake can auto-detect compression for most standard formats."
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "title": "Data Loading Commands",
+          "questions": [
+            {
+              "id": 1,
+              "text": "A regional manager wants to upload a CSV from their laptop to a Snowflake internal stage. Which command must they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "COPY INTO"
+                },
+                {
+                  "label": "B",
+                  "text": "GET"
+                },
+                {
+                  "label": "C",
+                  "text": "PUT"
+                },
+                {
+                  "label": "D",
+                  "text": "INSERT"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "PUT is used to upload local files to Snowflake internal stages."
+            },
+            {
+              "id": 2,
+              "text": "GRI wants to load data from a stage but needs to skip the first column and convert the second column to uppercase. Can they do this in a single command?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, they must load to a staging table first."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, using a transformation inside the COPY INTO statement."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if using Snowpipe."
+                },
+                {
+                  "label": "D",
+                  "text": "Only for JSON data."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "COPY INTO supports basic transformations like column reordering and simple functions."
+            },
+            {
+              "id": 3,
+              "text": "Which command is used to troubleshoot and view rows that failed to load during a COPY INTO operation?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "LIST"
+                },
+                {
+                  "label": "B",
+                  "text": "VALIDATE"
+                },
+                {
+                  "label": "C",
+                  "text": "CHECK\\_ERRORS"
+                },
+                {
+                  "label": "D",
+                  "text": "SHOW LOADS"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "VALIDATE allows you to inspect the errors of a previous load."
+            },
+            {
+              "id": 4,
+              "text": "GRI wants to query a large set of log files in S3 without actually importing the data into Snowflake tables. What should they create?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Internal Table"
+                },
+                {
+                  "label": "B",
+                  "text": "External Table"
+                },
+                {
+                  "label": "C",
+                  "text": "Secure View"
+                },
+                {
+                  "label": "D",
+                  "text": "Materialized View"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "External tables allow querying files directly in cloud storage."
+            },
+            {
+              "id": 5,
+              "text": "Which parameter in the COPY INTO command ensures that the file is deleted from the stage after a successful load?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ON\\_ERROR \\= 'DELETE'"
+                },
+                {
+                  "label": "B",
+                  "text": "PURGE \\= TRUE"
+                },
+                {
+                  "label": "C",
+                  "text": "DELETE\\_AFTER\\_LOAD \\= TRUE"
+                },
+                {
+                  "label": "D",
+                  "text": "CLEANUP \\= TRUE"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "PURGE \\= TRUE removes files from the stage upon successful completion."
+            },
+            {
+              "id": 6,
+              "text": "A user attempts to run a PUT command in the Snowsight SQL Worksheet. What happens?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The file is uploaded to the user stage."
+                },
+                {
+                  "label": "B",
+                  "text": "It fails; PUT and GET are not supported in the web UI."
+                },
+                {
+                  "label": "C",
+                  "text": "It succeeds only for files under 50 MB."
+                },
+                {
+                  "label": "D",
+                  "text": "It requires the ACCOUNTADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "PUT and GET must be executed via SnowSQL (CLI) or drivers."
+            },
+            {
+              "id": 7,
+              "text": "What is the default behavior of COPY INTO if it encounters a single error in a file?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It skips the bad row and continues."
+                },
+                {
+                  "label": "B",
+                  "text": "It aborts the entire load operation (ABORT\\_STATEMENT)."
+                },
+                {
+                  "label": "C",
+                  "text": "It loads the bad row as a NULL."
+                },
+                {
+                  "label": "D",
+                  "text": "It pauses the warehouse."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The default ON\\_ERROR value is ABORT\\_STATEMENT."
+            },
+            {
+              "id": 8,
+              "text": "Which object stores the definition of a CSV's delimiter, header count, and escape characters for reuse?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stage"
+                },
+                {
+                  "label": "B",
+                  "text": "Table"
+                },
+                {
+                  "label": "C",
+                  "text": "File Format"
+                },
+                {
+                  "label": "D",
+                  "text": "Storage Integration"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "File Formats are reusable objects for parsing rules."
+            },
+            {
+              "id": 9,
+              "text": "GRI needs to reload a file that was loaded 20 days ago. The file is still in the stage. By default, what will COPY INTO do?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Reload it automatically."
+                },
+                {
+                  "label": "B",
+                  "text": "Skip it because it is in the load history."
+                },
+                {
+                  "label": "C",
+                  "text": "Fail with a \"Duplicate File\" error."
+                },
+                {
+                  "label": "D",
+                  "text": "Overwrite the existing table data."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake tracks load history for 64 days and skips previously loaded files unless FORCE \\= TRUE is used."
+            },
+            {
+              "id": 10,
+              "text": "Which command defines the automated ingestion logic used by Snowpipe?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "CREATE SNOWPIPE"
+                },
+                {
+                  "label": "B",
+                  "text": "CREATE PIPE"
+                },
+                {
+                  "label": "C",
+                  "text": "CREATE STAGE"
+                },
+                {
+                  "label": "D",
+                  "text": "ALTER TABLE ... ENABLE SNOWPIPE"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "CREATE PIPE defines the COPY INTO logic for Snowpipe."
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "title": "Data Unloading Concepts & Best Practices",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI is unloading a 10 TB table. By default, how many files will Snowflake create?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Exactly one."
+                },
+                {
+                  "label": "B",
+                  "text": "One per micro-partition."
+                },
+                {
+                  "label": "C",
+                  "text": "Multiple files, to utilize parallel execution."
+                },
+                {
+                  "label": "D",
+                  "text": "None; unloading is a single-threaded process."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Snowflake unloads data in parallel, creating multiple files for performance."
+            },
+            {
+              "id": 2,
+              "text": "Which compression format is applied by default when unloading data from Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "ZIP"
+                },
+                {
+                  "label": "B",
+                  "text": "GZIP"
+                },
+                {
+                  "label": "C",
+                  "text": "ZSTD"
+                },
+                {
+                  "label": "D",
+                  "text": "None (Plain Text)"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "GZIP is the default compression for unloading."
+            },
+            {
+              "id": 3,
+              "text": "GRI needs to export data to a partner who can only process a single large file. Which parameter should they use in COPY INTO \\<location\\>?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SINGLE \\= TRUE"
+                },
+                {
+                  "label": "B",
+                  "text": "FILES \\= 1"
+                },
+                {
+                  "label": "C",
+                  "text": "MAX\\_FILE\\_COUNT \\= 1"
+                },
+                {
+                  "label": "D",
+                  "text": "MERGE\\_FILES \\= TRUE"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "SINGLE \\= TRUE forces Snowflake to output a single file."
+            },
+            {
+              "id": 4,
+              "text": "When unloading a table to a CSV, how are NULL values represented in the file by default?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "As the word \"NULL\"."
+                },
+                {
+                  "label": "B",
+                  "text": "As an empty string (,,)."
+                },
+                {
+                  "label": "C",
+                  "text": "As a zero."
+                },
+                {
+                  "label": "D",
+                  "text": "They are skipped."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "By default, NULL values are unloaded as empty strings."
+            },
+            {
+              "id": 5,
+              "text": "GRI wants to unload relational data into a JSON file format. Which function helps convert rows into JSON objects during the unload?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "PARSE\\_JSON"
+                },
+                {
+                  "label": "B",
+                  "text": "OBJECT\\_CONSTRUCT"
+                },
+                {
+                  "label": "C",
+                  "text": "TO\\_VARIANT"
+                },
+                {
+                  "label": "D",
+                  "text": "CAST\\_TO\\_JSON"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "OBJECT\\_CONSTRUCT builds a JSON object from relational columns."
+            },
+            {
+              "id": 6,
+              "text": "Is it possible to unload data directly to a local hard drive from the Snowsight UI?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes, using the \"Export\" button."
+                },
+                {
+                  "label": "B",
+                  "text": "No, you must unload to a stage first, then use GET."
+                },
+                {
+                  "label": "C",
+                  "text": "Only for tables under 1 GB."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if using the SYSADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The COPY INTO \\<location\\> command requires a stage."
+            },
+            {
+              "id": 7,
+              "text": "GRI wants to ensure that unloaded files do not exceed 500 MB. Which parameter should they set?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "MAX\\_FILE\\_SIZE"
+                },
+                {
+                  "label": "B",
+                  "text": "FILE\\_SIZE\\_LIMIT"
+                },
+                {
+                  "label": "C",
+                  "text": "BLOCK\\_SIZE"
+                },
+                {
+                  "label": "D",
+                  "text": "CHUNK\\_SIZE"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "MAX\\_FILE\\_SIZE defines the upper limit for each unloaded file."
+            },
+            {
+              "id": 8,
+              "text": "Which column property is NOT preserved when unloading data to a CSV file?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Column Name (unless headers are enabled)"
+                },
+                {
+                  "label": "B",
+                  "text": "Data Type"
+                },
+                {
+                  "label": "C",
+                  "text": "Constraints (Not Null, Primary Key)"
+                },
+                {
+                  "label": "D",
+                  "text": "All of the above"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "CSV files are plain text; they do not store metadata like data types or constraints."
+            },
+            {
+              "id": 9,
+              "text": "Can a user unload data from a View?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, only from physical tables."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, the COPY INTO \\<location\\> command accepts a SELECT statement."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if it is a Materialized View."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if the view is in the PUBLIC schema."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "You can unload the results of any query, including those from a view."
+            },
+            {
+              "id": 10,
+              "text": "GRI wants to overwrite files in the stage that have the same name as the new unloaded files. Which parameter is needed?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "OVERWRITE \\= TRUE"
+                },
+                {
+                  "label": "B",
+                  "text": "PURGE \\= TRUE"
+                },
+                {
+                  "label": "C",
+                  "text": "FORCE \\= TRUE"
+                },
+                {
+                  "label": "D",
+                  "text": "REPLACE \\= TRUE"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "OVERWRITE \\= TRUE allows the unload to replace existing files in the stage."
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "title": "Data Unloading Commands",
+          "questions": [
+            {
+              "id": 1,
+              "text": "Which command is used to move files from a Snowflake Internal Stage to a local folder?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "PUT"
+                },
+                {
+                  "label": "B",
+                  "text": "DOWNLOAD"
+                },
+                {
+                  "label": "C",
+                  "text": "GET"
+                },
+                {
+                  "label": "D",
+                  "text": "COPY INTO"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "GET is used to download files from internal stages."
+            },
+            {
+              "id": 2,
+              "text": "GRI wants to verify the size and count of files they just unloaded into @my\\_stage. Which command should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SHOW FILES"
+                },
+                {
+                  "label": "B",
+                  "text": "LIST"
+                },
+                {
+                  "label": "C",
+                  "text": "DESCRIBE STAGE"
+                },
+                {
+                  "label": "D",
+                  "text": "SELECT \\* FROM @my\\_stage"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "LIST (or LS) shows the files in a stage."
+            },
+            {
+              "id": 3,
+              "text": "Does the GET command support downloading files from an External Stage (e.g., S3)?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes."
+                },
+                {
+                  "label": "B",
+                  "text": "No, GET only works with Internal Stages."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the Storage Integration is configured."
+                },
+                {
+                  "label": "D",
+                  "text": "Only for the ACCOUNTADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "GET is restricted to Snowflake internal storage."
+            },
+            {
+              "id": 4,
+              "text": "Which command is used to export data from a Snowflake table to an external cloud bucket?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "PUT"
+                },
+                {
+                  "label": "B",
+                  "text": "GET"
+                },
+                {
+                  "label": "C",
+                  "text": "COPY INTO \\<location\\>"
+                },
+                {
+                  "label": "D",
+                  "text": "EXPORT TABLE"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "COPY INTO \\<location\\> is the command for unloading."
+            },
+            {
+              "id": 5,
+              "text": "When using LIST @stage, what information is provided?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "File name, size, MD5 hash, and last modified date."
+                },
+                {
+                  "label": "B",
+                  "text": "The data inside the files."
+                },
+                {
+                  "label": "C",
+                  "text": "The users who accessed the files."
+                },
+                {
+                  "label": "D",
+                  "text": "The SQL command that created the files."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "LIST provides metadata about the files in the stage."
+            },
+            {
+              "id": 6,
+              "text": "GRI is using SnowSQL. They want to download all files from a stage that end in .csv. What syntax should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "GET @my\\_stage \\*.csv file:///local/path;"
+                },
+                {
+                  "label": "B",
+                  "text": "GET @my\\_stage pattern='.\\*\\\\.csv' file:///local/path;"
+                },
+                {
+                  "label": "C",
+                  "text": "DOWNLOAD FROM @my\\_stage WHERE type='csv';"
+                },
+                {
+                  "label": "D",
+                  "text": "COPY INTO file:///local/path FROM @my\\_stage;"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "GET (and PUT) support regex patterns for file selection."
+            },
+            {
+              "id": 7,
+              "text": "Which role is required to execute a GET command on a Named Internal Stage?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Any role with the USAGE privilege on the stage."
+                },
+                {
+                  "label": "B",
+                  "text": "Only the ACCOUNTADMIN."
+                },
+                {
+                  "label": "C",
+                  "text": "Only the user who created the stage."
+                },
+                {
+                  "label": "D",
+                  "text": "Only the SYSADMIN."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "USAGE (or READ depending on version/setting) is required to access files in a stage."
+            },
+            {
+              "id": 8,
+              "text": "Can the LIST command filter results to show only files in a specific sub-folder of a stage?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it always shows the whole stage."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, by specifying the path (e.g., LIST @my\\_stage/folder1/)."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the stage is an External Stage."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if using the SECURITYADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "You can specify paths in the LIST command."
+            },
+            {
+              "id": 9,
+              "text": "GRI unloads data to an internal stage using COPY INTO @\\~. Where does the data go?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The User Stage."
+                },
+                {
+                  "label": "B",
+                  "text": "The Table Stage."
+                },
+                {
+                  "label": "C",
+                  "text": "The Named Stage."
+                },
+                {
+                  "label": "D",
+                  "text": "The Cloud Services metadata."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "@\\~ denotes the User Stage."
+            },
+            {
+              "id": 10,
+              "text": "A user unloads data to a stage and then runs a GET command. They notice the file name in the local folder has an additional .gz extension. Why?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowflake renamed it for security."
+                },
+                {
+                  "label": "B",
+                  "text": "The GET command compresses data during the download."
+                },
+                {
+                  "label": "C",
+                  "text": "Snowflake compresses unloaded files by default (GZIP)."
+                },
+                {
+                  "label": "D",
+                  "text": "The user's operating system added it."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Unloading defaults to GZIP compression."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5.0",
+      "title": "Data Transformations",
+      "weightage": "18%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "5.1",
+          "title": "Working with Structured Data",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI needs to find the approximate number of unique customers who visited their site across 5 billion rows. Which function provides the fastest result with minimal compute?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "COUNT(DISTINCT customer\\_id)"
+                },
+                {
+                  "label": "B",
+                  "text": "APPROX\\_COUNT\\_DISTINCT(customer\\_id)"
+                },
+                {
+                  "label": "C",
+                  "text": "ESTIMATE\\_UNIQUE\\_VALUES(customer\\_id)"
+                },
+                {
+                  "label": "D",
+                  "text": "SUM(DISTINCT customer\\_id)"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "APPROX\\_COUNT\\_DISTINCT uses the HyperLogLog algorithm to provide a fast estimate, avoiding the heavy compute required for an exact count on massive datasets."
+            },
+            {
+              "id": 2,
+              "text": "GRI wants to test a new machine learning model on exactly 10% of their 100 TB Transactions table. Which sampling method is most efficient for a table of this size?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Bernoulli (Row) Sampling"
+                },
+                {
+                  "label": "B",
+                  "text": "System (Block) Sampling"
+                },
+                {
+                  "label": "C",
+                  "text": "Random Aggregate Sampling"
+                },
+                {
+                  "label": "D",
+                  "text": "Partitioned Sampling"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "System (Block) sampling selects micro-partitions rather than individual rows, making it significantly faster for massive tables, though less \"random\" at the row level."
+            },
+            {
+              "id": 3,
+              "text": "A developer at GRI writes a function in SQL that calculates a tax rate and returns a single decimal value. This is an example of a:",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stored Procedure"
+                },
+                {
+                  "label": "B",
+                  "text": "Scalar UDF"
+                },
+                {
+                  "label": "C",
+                  "text": "Tabular UDF (UDTF)"
+                },
+                {
+                  "label": "D",
+                  "text": "External Function"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "A Scalar User-Defined Function (UDF) returns exactly one value for each input row."
+            },
+            {
+              "id": 4,
+              "text": "GRI wants to use a 3rd-party sentiment analysis API to process customer comments stored in Snowflake. Which feature allows Snowflake to send data to an external API and receive the result?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Stored Procedure"
+                },
+                {
+                  "label": "B",
+                  "text": "UDTF"
+                },
+                {
+                  "label": "C",
+                  "text": "External Function"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowpark"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "External functions allow Snowflake to call services outside the platform, such as AWS Lambda or Azure Functions."
+            },
+            {
+              "id": 5,
+              "text": "What is the main difference between a Stored Procedure and a UDF in Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Procedures are only in JavaScript; UDFs are only in SQL."
+                },
+                {
+                  "label": "B",
+                  "text": "Procedures are called using CALL to perform actions; UDFs are used in SELECT statements to calculate values."
+                },
+                {
+                  "label": "C",
+                  "text": "Procedures return tables; UDFs return single values."
+                },
+                {
+                  "label": "D",
+                  "text": "UDFs can modify the database; Procedures cannot."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Procedures are for procedural logic and administrative tasks (invoked with CALL), whereas UDFs are for data transformation within a query."
+            },
+            {
+              "id": 6,
+              "text": "GRI wants to process only the \"New\" records that have been added to the Orders table since the last ETL run. Which object acts as a Change Data Capture (CDC) mechanism?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Task"
+                },
+                {
+                  "label": "B",
+                  "text": "Stream"
+                },
+                {
+                  "label": "C",
+                  "text": "Pipe"
+                },
+                {
+                  "label": "D",
+                  "text": "Materialized View"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Streams track DML changes (inserts, updates, deletes) on a table so that only delta data can be processed."
+            },
+            {
+              "id": 7,
+              "text": "A GRI task is scheduled to run every 5 minutes. However, the engineers don't want to waste credits if there is no new data. What is the best practice?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Set the task to \"Auto-suspend\"."
+                },
+                {
+                  "label": "B",
+                  "text": "Use WHEN SYSTEM$STREAM\\_HAS\\_DATA('my\\_stream') in the task definition."
+                },
+                {
+                  "label": "C",
+                  "text": "Use a smaller warehouse."
+                },
+                {
+                  "label": "D",
+                  "text": "Manually pause the task."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The WHEN clause allows a task to check if a stream contains data before starting the warehouse."
+            },
+            {
+              "id": 8,
+              "text": "Can a Snowflake Task be configured to trigger based on a message from an external queue like AWS SQS?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes, using the TRIGGER parameter."
+                },
+                {
+                  "label": "B",
+                  "text": "No, tasks can only be scheduled by time (Cron/Interval) or as a child of another task."
+                },
+                {
+                  "label": "C",
+                  "text": "Only in the Business Critical edition."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if using Snowpark."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Tasks are currently time-based or dependency-based (DAGs); they are not natively triggered by external events."
+            },
+            {
+              "id": 9,
+              "text": "GRI has a \"Task Tree\" (DAG). If the Parent Task fails, what happens to the Child Task?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It runs anyway."
+                },
+                {
+                  "label": "B",
+                  "text": "It is skipped."
+                },
+                {
+                  "label": "C",
+                  "text": "it retries the Parent Task automatically."
+                },
+                {
+                  "label": "D",
+                  "text": "It waits indefinitely."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "By default, child tasks only execute if the predecessor task completes successfully."
+            },
+            {
+              "id": 10,
+              "text": "A \"Standard\" stream on a table tracks which of the following?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Only Inserts"
+                },
+                {
+                  "label": "B",
+                  "text": "Only Updates"
+                },
+                {
+                  "label": "C",
+                  "text": "Inserts, Updates, and Deletes"
+                },
+                {
+                  "label": "D",
+                  "text": "Only DDL changes (e.g., Alter Table)"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "A standard stream tracks all DML changes, including the \"before\" and \"after\" state of updated rows."
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "title": "Working with Semi-Structured Data",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI stores mobile app logs in a VARIANT column. What is the maximum size allowed for a single row in this column?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "1 MB"
+                },
+                {
+                  "label": "B",
+                  "text": "8 MB"
+                },
+                {
+                  "label": "C",
+                  "text": "16 MB (compressed)"
+                },
+                {
+                  "label": "D",
+                  "text": "Unlimited"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "The VARIANT data type has a limit of 16 MB per row."
+            },
+            {
+              "id": 2,
+              "text": "Which character is used in Snowflake SQL to navigate through nested keys in a JSON object stored in a VARIANT column?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Dot (.)"
+                },
+                {
+                  "label": "B",
+                  "text": "Colon (:)"
+                },
+                {
+                  "label": "C",
+                  "text": "Arrow (\\-\\>)"
+                },
+                {
+                  "label": "D",
+                  "text": "Dollar ($)"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The colon (:) is used to traverse semi-structured data (e.g., column\\_name:key\\_name)."
+            },
+            {
+              "id": 3,
+              "text": "GRI's JSON data contains an array of items: {\"items\": \\[1, 2, 3\\]}. Which function should they use to turn these 3 array elements into 3 separate rows?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SPLIT"
+                },
+                {
+                  "label": "B",
+                  "text": "UNNEST"
+                },
+                {
+                  "label": "C",
+                  "text": "FLATTEN"
+                },
+                {
+                  "label": "D",
+                  "text": "EXPLODE"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "The FLATTEN table function explodes compound values (arrays/objects) into multiple rows."
+            },
+            {
+              "id": 4,
+              "text": "When using FLATTEN, which clause is commonly used to join the exploded rows back to the original source row?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "INNER JOIN"
+                },
+                {
+                  "label": "B",
+                  "text": "LATERAL"
+                },
+                {
+                  "label": "C",
+                  "text": "CROSS APPLY"
+                },
+                {
+                  "label": "D",
+                  "text": "OUTER APPLY"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "LATERAL FLATTEN is the standard pattern for joining flattened data with the parent record."
+            },
+            {
+              "id": 5,
+              "text": "GRI wants to convert a JSON string value \"123.45\" from a VARIANT column into an actual numeric type for a calculation. What is the correct syntax?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "CAST(src:value AS NUMBER)"
+                },
+                {
+                  "label": "B",
+                  "text": "src:value::number"
+                },
+                {
+                  "label": "C",
+                  "text": "Both A and B"
+                },
+                {
+                  "label": "D",
+                  "text": "CONVERT(src:value, number)"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Both CAST and the double-colon :: notation are valid for casting semi-structured data."
+            },
+            {
+              "id": 6,
+              "text": "Does Snowflake automatically optimize the storage of semi-structured data (like Parquet or JSON) for better performance?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is stored as a raw blob."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it \"shreds\" common paths into hidden columns for faster access."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the table is Clustered."
+                },
+                {
+                  "label": "D",
+                  "text": "Only in the Enterprise edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake performs automatic internal optimizations on VARIANT data to achieve performance similar to relational data."
+            },
+            {
+              "id": 7,
+              "text": "Which function returns a JSON object created from multiple relational columns?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "OBJECT\\_CONSTRUCT"
+                },
+                {
+                  "label": "B",
+                  "text": "ARRAY\\_CONSTRUCT"
+                },
+                {
+                  "label": "C",
+                  "text": "PARSE\\_JSON"
+                },
+                {
+                  "label": "D",
+                  "text": "TO\\_JSON"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "OBJECT\\_CONSTRUCT takes key-value pairs or column names and builds a JSON object."
+            },
+            {
+              "id": 8,
+              "text": "GRI is querying a VARIANT column and receives a value enclosed in double quotes: \"Active\". They want the raw string Active. What should they do?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Use TRIM()."
+                },
+                {
+                  "label": "B",
+                  "text": "Cast the value to a string (e.g., ::string)."
+                },
+                {
+                  "label": "C",
+                  "text": "Use REPLACE()."
+                },
+                {
+                  "label": "D",
+                  "text": "Use STRIP\\_QUOTES()."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Casting a VARIANT value to a string removes the JSON quotes."
+            },
+            {
+              "id": 9,
+              "text": "If a GRI analyst queries a key that does not exist in a JSON object, what does Snowflake return?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "An Error"
+                },
+                {
+                  "label": "B",
+                  "text": "NULL"
+                },
+                {
+                  "label": "C",
+                  "text": "An empty string"
+                },
+                {
+                  "label": "D",
+                  "text": "The string \"undefined\""
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "If a path/key does not exist, Snowflake returns a SQL NULL."
+            },
+            {
+              "id": 10,
+              "text": "Which semi-structured format is NOT supported for direct loading into a VARIANT column?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "XML"
+                },
+                {
+                  "label": "B",
+                  "text": "Avro"
+                },
+                {
+                  "label": "C",
+                  "text": "Parquet"
+                },
+                {
+                  "label": "D",
+                  "text": "CSV"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "CSV is a structured format. While you can load it, it doesn't go into a VARIANT column in its raw form like JSON or XML."
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "title": "Working with Unstructured Data",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI has thousands of PDF invoices in an S3 bucket. Which object allows them to see the file names, sizes, and metadata of these files inside Snowflake?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "External Table"
+                },
+                {
+                  "label": "B",
+                  "text": "Directory Table"
+                },
+                {
+                  "label": "C",
+                  "text": "File Table"
+                },
+                {
+                  "label": "D",
+                  "text": "Metadata Stage"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "A Directory Table is a catalog of files in a stage (internal or external)."
+            },
+            {
+              "id": 2,
+              "text": "GRI wants to generate a temporary link to a PDF file that a user can click on to view the document without logging into Snowflake. Which URL type should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Scoped URL"
+                },
+                {
+                  "label": "B",
+                  "text": "File URL"
+                },
+                {
+                  "label": "C",
+                  "text": "Stage URL"
+                },
+                {
+                  "label": "D",
+                  "text": "Direct URL"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "Scoped URLs are temporary, encoded links that allow access without a Snowflake login for a short duration."
+            },
+            {
+              "id": 3,
+              "text": "Which URL type is permanent and does not expire, but requires the user to be authenticated into Snowflake to access the file?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Scoped URL"
+                },
+                {
+                  "label": "B",
+                  "text": "File URL"
+                },
+                {
+                  "label": "C",
+                  "text": "Stage URL"
+                },
+                {
+                  "label": "D",
+                  "text": "Eternal URL"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "File URLs are permanent but require authentication/authorization."
+            },
+            {
+              "id": 4,
+              "text": "GRI needs to extract the \"Text\" from a PDF stored in Snowflake. How can they achieve this natively?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SELECT \\* FROM table"
+                },
+                {
+                  "label": "B",
+                  "text": "Using a Python UDF (Snowpark) with a library like PyPDF2."
+                },
+                {
+                  "label": "C",
+                  "text": "Using PARSE\\_PDF function."
+                },
+                {
+                  "label": "D",
+                  "text": "Using COPY INTO."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake unstructured data support allows you to use UDFs or Stored Procedures (Java/Python) to process files."
+            },
+            {
+              "id": 5,
+              "text": "When using an External Stage for unstructured data, how does the Directory Table stay in sync with the files in S3?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "It is always real-time."
+                },
+                {
+                  "label": "B",
+                  "text": "By running ALTER STAGE ... REFRESH."
+                },
+                {
+                  "label": "C",
+                  "text": "By setting AUTO\\_REFRESH \\= TRUE (via cloud notifications)."
+                },
+                {
+                  "label": "D",
+                  "text": "Both B and C."
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "You can manually refresh or automate it using event notifications from the cloud provider."
+            },
+            {
+              "id": 6,
+              "text": "Which function is used to retrieve the \"Stage URL\" for a specific file?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "GET\\_STAGE\\_URL()"
+                },
+                {
+                  "label": "B",
+                  "text": "BUILD\\_STAGE\\_FILE\\_URL()"
+                },
+                {
+                  "label": "C",
+                  "text": "GET\\_PRESIGNED\\_URL()"
+                },
+                {
+                  "label": "D",
+                  "text": "BUILD\\_SCOPED\\_FILE\\_URL()"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "This function generates a URL to a file in a stage."
+            },
+            {
+              "id": 7,
+              "text": "Does a Directory Table incur additional storage costs?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, it is a free service."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, it is billed as a very small amount of storage in a background table."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the stage is internal."
+                },
+                {
+                  "label": "D",
+                  "text": "Only in Business Critical edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Directory tables have a small overhead for storing file metadata."
+            },
+            {
+              "id": 8,
+              "text": "GRI wants to grant a user the ability to see the files in a directory table but not the data inside the tables. What privilege is needed?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SELECT on the Directory Table."
+                },
+                {
+                  "label": "B",
+                  "text": "USAGE on the Stage."
+                },
+                {
+                  "label": "C",
+                  "text": "READ on the Stage."
+                },
+                {
+                  "label": "D",
+                  "text": "MONITOR on the Account."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "You grant SELECT on the stage's directory table just like a regular table."
+            },
+            {
+              "id": 9,
+              "text": "Which of the following is a metadata column automatically provided by a Directory Table?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "RELATIVE\\_PATH"
+                },
+                {
+                  "label": "B",
+                  "text": "SIZE"
+                },
+                {
+                  "label": "C",
+                  "text": "LAST\\_MODIFIED"
+                },
+                {
+                  "label": "D",
+                  "text": "All of the above"
+                }
+              ],
+              "correctAnswer": "D",
+              "explanation": "Directory tables provide standard file metadata columns."
+            },
+            {
+              "id": 10,
+              "text": "Can GRI search for a specific PDF file name using a standard SQL WHERE clause on a Directory Table?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, you must use the LIST command."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, Directory Tables can be queried using standard SQL."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if the files are indexed."
+                },
+                {
+                  "label": "D",
+                  "text": "Only using the ACCOUNTADMIN role."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "This is the primary benefit of Directory Tables over the LIST command."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6.0",
+      "title": "Data Protection and Data Sharing",
+      "weightage": "12%",
+      "scenario": {
+        "title": "Global Retail Ingest (GRI)",
+        "description": "(10 Questions)"
+      },
+      "subTopics": [
+        {
+          "id": "6.1",
+          "title": "Continuous Data Protection (CDP)",
+          "questions": [
+            {
+              "id": 1,
+              "text": "A developer at GRI accidentally executes DROP TABLE TRANSACTIONS. Which command will restore the table and all its data immediately?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "RECOVER TABLE TRANSACTIONS;"
+                },
+                {
+                  "label": "B",
+                  "text": "UNDROP TABLE TRANSACTIONS;"
+                },
+                {
+                  "label": "C",
+                  "text": "RESTORE TABLE TRANSACTIONS FROM FAILSAFE;"
+                },
+                {
+                  "label": "D",
+                  "text": "ROLLBACK;"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "UNDROP uses Time Travel metadata to restore dropped objects instantly."
+            },
+            {
+              "id": 2,
+              "text": "GRI is using the Snowflake Enterprise Edition. What is the maximum number of days they can configure for Time Travel on their permanent production tables?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "1 day"
+                },
+                {
+                  "label": "B",
+                  "text": "7 days"
+                },
+                {
+                  "label": "C",
+                  "text": "90 days"
+                },
+                {
+                  "label": "D",
+                  "text": "365 days"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Enterprise Edition allows up to 90 days of Time Travel retention."
+            },
+            {
+              "id": 3,
+              "text": "GRI has a table that reached the end of its 90-day Time Travel period yesterday. Today, they realize they need to recover deleted data. Which feature applies now?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Time Travel (extended)"
+                },
+                {
+                  "label": "B",
+                  "text": "Fail-safe"
+                },
+                {
+                  "label": "C",
+                  "text": "Zero-copy cloning"
+                },
+                {
+                  "label": "D",
+                  "text": "Metadata Archiving"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Fail-safe is the 7-day period that automatically begins after the Time Travel window closes."
+            },
+            {
+              "id": 4,
+              "text": "Who can access and query data that is currently in the Fail-safe period?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The ACCOUNTADMIN role."
+                },
+                {
+                  "label": "B",
+                  "text": "The object owner."
+                },
+                {
+                  "label": "C",
+                  "text": "Only Snowflake Support."
+                },
+                {
+                  "label": "D",
+                  "text": "Any user with the MONITOR privilege."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Fail-safe is a system-recovery feature accessible only by Snowflake personnel."
+            },
+            {
+              "id": 5,
+              "text": "GRI wants to create a \"Sandbox\" environment for testing. They want to copy their 100 TB Production database without incurring additional storage costs or waiting hours for a data transfer. What should they use?",
+              "options": [
+                {
+                  "label": "B",
+                  "text": "CREATE DATABASE sandbox CLONE production;"
+                },
+                {
+                  "label": "C",
+                  "text": "Data Replication"
+                },
+                {
+                  "label": "D",
+                  "text": "Backup and Restore"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Zero-copy cloning creates a metadata-based copy instantly with no initial storage cost."
+            },
+            {
+              "id": 6,
+              "text": "Which table types do NOT have a Fail-safe period?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Permanent and Transient"
+                },
+                {
+                  "label": "B",
+                  "text": "Transient and Temporary"
+                },
+                {
+                  "label": "C",
+                  "text": "Only Temporary"
+                },
+                {
+                  "label": "D",
+                  "text": "All tables have Fail-safe."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Transient and Temporary tables are designed for non-critical/session data and do not have Fail-safe to save on storage costs."
+            },
+            {
+              "id": 7,
+              "text": "GRI is replicating data from AWS US-East to Azure West-Europe. In the event of a regional AWS outage, which feature allows them to switch their secondary Azure database to \"Primary\" status?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Fail-safe"
+                },
+                {
+                  "label": "B",
+                  "text": "Time Travel"
+                },
+                {
+                  "label": "C",
+                  "text": "Failover"
+                },
+                {
+                  "label": "D",
+                  "text": "Cloning"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Failover (and Failback) is the process of switching the primary/secondary status of replicated databases."
+            },
+            {
+              "id": 8,
+              "text": "GRI updates a single row in a 10 GB table. How much storage is added to their Time Travel bill?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "10 GB (the whole table is copied)"
+                },
+                {
+                  "label": "B",
+                  "text": "Only the size of the original micro-partition that was changed."
+                },
+                {
+                  "label": "C",
+                  "text": "0 bytes (Time Travel is free)."
+                },
+                {
+                  "label": "D",
+                  "text": "16 MB (the size of a VARIANT)."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake only stores the \"changed\" micro-partitions in Time Travel, not the entire table."
+            },
+            {
+              "id": 9,
+              "text": "Does Snowflake encrypt data at rest?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes, but you must enable it in the ACCOUNTADMIN settings."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, all data is automatically encrypted by default using AES-256."
+                },
+                {
+                  "label": "C",
+                  "text": "No, encryption is an add-on feature."
+                },
+                {
+                  "label": "D",
+                  "text": "Only for the Business Critical edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Snowflake provides transparent, automatic encryption at rest for all data."
+            },
+            {
+              "id": 10,
+              "text": "A GRI analyst wants to see what the Customers table looked like exactly 2 hours ago. Which syntax should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SELECT \\* FROM customers AT(OFFSET \\=\\> \\-7200);"
+                },
+                {
+                  "label": "B",
+                  "text": "SELECT \\* FROM customers AS OF 2 HOURS AGO;"
+                },
+                {
+                  "label": "C",
+                  "text": "SELECT \\* FROM customers BEFORE(QUERY\\_ID \\=\\> 'last');"
+                },
+                {
+                  "label": "D",
+                  "text": "UNDROP TABLE customers;"
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "The AT clause with OFFSET (in seconds) is the standard way to query historical data."
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "title": "Data Sharing Capabilities",
+          "questions": [
+            {
+              "id": 1,
+              "text": "GRI wants to share data with a partner company. The partner uses Snowflake. How is the data transferred to the partner?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Via an encrypted S3 bucket."
+                },
+                {
+                  "label": "B",
+                  "text": "Via Snowflake's internal API."
+                },
+                {
+                  "label": "C",
+                  "text": "The data is not transferred; the partner queries GRI's data directly via metadata sharing."
+                },
+                {
+                  "label": "D",
+                  "text": "Using the PUT and GET commands."
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Secure Data Sharing is \"zero-copy\"; no data movement occurs."
+            },
+            {
+              "id": 2,
+              "text": "In a data sharing relationship, who pays for the storage of the shared data?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The Provider (GRI)."
+                },
+                {
+                  "label": "B",
+                  "text": "The Consumer (Partner)."
+                },
+                {
+                  "label": "C",
+                  "text": "Both split the cost 50/50."
+                },
+                {
+                  "label": "D",
+                  "text": "Snowflake provides shared storage for free."
+                }
+              ],
+              "correctAnswer": "A",
+              "explanation": "The provider always pays for the storage of the original data."
+            },
+            {
+              "id": 3,
+              "text": "GRI has a partner who does NOT have a Snowflake account but wants to query GRI's shared data. What should GRI create for them?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "A new User in the GRI account."
+                },
+                {
+                  "label": "B",
+                  "text": "A Reader Account."
+                },
+                {
+                  "label": "C",
+                  "text": "A Managed Access Schema."
+                },
+                {
+                  "label": "D",
+                  "text": "A VPN tunnel."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Reader Accounts allow non-Snowflake users to query shared data."
+            },
+            {
+              "id": 4,
+              "text": "Who pays for the compute (Virtual Warehouse) used by a Reader Account?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "The user of the Reader Account."
+                },
+                {
+                  "label": "B",
+                  "text": "The Provider (GRI) who created the Reader Account."
+                },
+                {
+                  "label": "C",
+                  "text": "Snowflake."
+                },
+                {
+                  "label": "D",
+                  "text": "The SYSADMIN of the Consumer account."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The provider account is billed for all compute credits consumed by the reader accounts they manage."
+            },
+            {
+              "id": 5,
+              "text": "GRI wants to share a dataset with the general public so any Snowflake user can find and use it. Where should they list it?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Private Data Exchange"
+                },
+                {
+                  "label": "B",
+                  "text": "Snowflake Marketplace"
+                },
+                {
+                  "label": "C",
+                  "text": "Direct Share"
+                },
+                {
+                  "label": "D",
+                  "text": "Public S3 bucket"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "The Snowflake Marketplace is the public platform for sharing and discovering data."
+            },
+            {
+              "id": 6,
+              "text": "GRI wants to share a table but hide certain columns like Profit\\_Margin. What is the best practice?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Share the whole table and ask the partner not to look at that column."
+                },
+                {
+                  "label": "B",
+                  "text": "Create a Secure View that excludes the sensitive column and share the view."
+                },
+                {
+                  "label": "C",
+                  "text": "Use a standard view."
+                },
+                {
+                  "label": "D",
+                  "text": "Clone the table, delete the column, and share the clone."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Secure Views are required for sharing to prevent logic leaks and to control column visibility."
+            },
+            {
+              "id": 7,
+              "text": "A Consumer account wants to join a shared table from GRI with their own internal Inventory table. Can they do this?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "No, shared tables cannot be joined with local tables."
+                },
+                {
+                  "label": "B",
+                  "text": "Yes, shared tables behave like local read-only tables."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if they clone the shared table first."
+                },
+                {
+                  "label": "D",
+                  "text": "Only if the ACCOUNTADMIN allows it."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "One of the main benefits of sharing is the ability to join shared \"live\" data with local data."
+            },
+            {
+              "id": 8,
+              "text": "Can a Consumer account perform an UPDATE command on a table shared by GRI?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Yes."
+                },
+                {
+                  "label": "B",
+                  "text": "No, all shared data is read-only for the consumer."
+                },
+                {
+                  "label": "C",
+                  "text": "Only if they are given the OWNERSHIP privilege."
+                },
+                {
+                  "label": "D",
+                  "text": "Only in the Business Critical edition."
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "Shared data is strictly read-only for consumers."
+            },
+            {
+              "id": 9,
+              "text": "Which role is typically required to create a Share object?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "SYSADMIN"
+                },
+                {
+                  "label": "B",
+                  "text": "USERADMIN"
+                },
+                {
+                  "label": "C",
+                  "text": "ACCOUNTADMIN"
+                },
+                {
+                  "label": "D",
+                  "text": "PUBLIC"
+                }
+              ],
+              "correctAnswer": "C",
+              "explanation": "Creating a share is a high-level administrative task usually reserved for ACCOUNTADMIN."
+            },
+            {
+              "id": 10,
+              "text": "GRI wants to share data with a specific group of vetted enterprise partners in a private environment. Which feature should they use?",
+              "options": [
+                {
+                  "label": "A",
+                  "text": "Snowflake Marketplace"
+                },
+                {
+                  "label": "B",
+                  "text": "Data Exchange"
+                },
+                {
+                  "label": "C",
+                  "text": "Global Share"
+                },
+                {
+                  "label": "D",
+                  "text": "Snowgrid"
+                }
+              ],
+              "correctAnswer": "B",
+              "explanation": "A Data Exchange is a private, invitation-only data marketplace."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
