@@ -12,16 +12,21 @@ interface QuizRunnerProps {
 export const QuizRunner: React.FC<QuizRunnerProps> = ({ domain, onComplete, onExit }) => {
   const { mode } = useQuiz();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showScenario, setShowScenario] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false); // For practice mode immediate feedback
 
   // Flatten questions to a single array, keeping track of subtopic
   const allQuestions = useMemo(() => {
-    const questions: { q: Question; subTopicId: string; subTopicTitle: string }[] = [];
+    const questions: { uniqueId: string; q: Question; subTopicId: string; subTopicTitle: string }[] = [];
     domain.subTopics.forEach(sub => {
       sub.questions.forEach(q => {
-        questions.push({ q, subTopicId: sub.id, subTopicTitle: sub.title });
+        questions.push({ 
+          uniqueId: `${sub.id}-${q.id}`,
+          q, 
+          subTopicId: sub.id, 
+          subTopicTitle: sub.title 
+        });
       });
     });
     return questions;
@@ -29,14 +34,14 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ domain, onComplete, onEx
 
   const currentQ = allQuestions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === allQuestions.length - 1;
-  const hasAnsweredCurrent = !!answers[currentQ.q.id];
+  const hasAnsweredCurrent = !!answers[currentQ.uniqueId];
 
   const handleAnswer = (optionLabel: string) => {
     if (hasAnsweredCurrent && mode === 'practice') return; // Prevent changing answer in practice mode after feedback
     
     setAnswers(prev => ({
       ...prev,
-      [currentQ.q.id]: optionLabel
+      [currentQ.uniqueId]: optionLabel
     }));
 
     if (mode === 'practice') {
@@ -57,8 +62,8 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ domain, onComplete, onEx
     let score = 0;
     const incorrectSubTopics = new Set<string>();
 
-    allQuestions.forEach(({ q, subTopicTitle }) => {
-      if (answers[q.id] === q.correctAnswer) {
+    allQuestions.forEach(({ uniqueId, q, subTopicTitle }) => {
+      if (answers[uniqueId] === q.correctAnswer) {
         score++;
       } else {
         incorrectSubTopics.add(subTopicTitle);
@@ -116,7 +121,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ domain, onComplete, onEx
 
         <div className="space-y-3">
           {currentQ.q.options.map((option) => {
-            const isSelected = answers[currentQ.q.id] === option.label;
+            const isSelected = answers[currentQ.uniqueId] === option.label;
             const isCorrect = currentQ.q.correctAnswer === option.label;
             
             let buttonStyle = "border-slate-200 hover:border-blue-400 hover:bg-blue-50";
@@ -165,7 +170,17 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ domain, onComplete, onEx
       {/* Navigation */}
       <div className="flex justify-between">
         <button
-          onClick={() => setCurrentQuestionIndex(prev => Math.max(0, prev - 1))}
+          onClick={() => {
+            const prevIndex = Math.max(0, currentQuestionIndex - 1);
+            setCurrentQuestionIndex(prevIndex);
+            // If we go back, show feedback if it was answered
+            const prevQ = allQuestions[prevIndex];
+            if (prevQ && answers[prevQ.uniqueId] && mode === 'practice') {
+              setShowFeedback(true);
+            } else {
+              setShowFeedback(false);
+            }
+          }}
           disabled={currentQuestionIndex === 0}
           className="flex items-center px-4 py-2 text-slate-600 disabled:opacity-50 hover:text-slate-900"
         >
